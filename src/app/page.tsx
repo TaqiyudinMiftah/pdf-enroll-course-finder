@@ -1,101 +1,202 @@
-import Image from "next/image";
+﻿'use client';
+
+import React, { useState } from 'react';
+import UploadZone from '@/components/UploadZone';
+import ExtractedList from '@/components/ExtractedList';
+import ResultTable from '@/components/ResultTable';
+import ManualForm from '@/components/ManualForm';
+import CopyAllButton from '@/components/CopyAllButton';
+import { Course, ExtractResponse, LookupResponse, LookupResult } from '@/lib/types';
+
+type AppState = 'idle' | 'uploading' | 'extracting' | 'reviewing' | 'looking_up' | 'done';
+
+const MAX_WIDTH = 1200;
+const QUALITY = 0.85;
+
+function resizeImage(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      let { width, height } = img;
+
+      if (width > MAX_WIDTH) {
+        height = Math.round((height * MAX_WIDTH) / width);
+        width = MAX_WIDTH;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        reject(new Error('Failed to get canvas context'));
+        return;
+      }
+      ctx.drawImage(img, 0, 0, width, height);
+
+      const dataUrl = canvas.toDataURL('image/jpeg', QUALITY);
+      resolve(dataUrl);
+    };
+    img.onerror = () => reject(new Error('Failed to load image'));
+    img.src = URL.createObjectURL(file);
+  });
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [state, setState] = useState<AppState>('idle');
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [results, setResults] = useState<LookupResult[]>([]);
+  const [fallbackReason, setFallbackReason] = useState<string | undefined>();
+  const [error, setError] = useState<string | null>(null);
+  const [modelLabel, setModelLabel] = useState<string>('AI');
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleUpload = async (file: File) => {
+    if (file.size > 5 * 1024 * 1024) {
+      setError('Ukuran file maksimal 5MB');
+      return;
+    }
+
+    setState('extracting');
+    setError(null);
+    setModelLabel('AI');
+
+    try {
+      const imageData = await resizeImage(file);
+
+      const response = await fetch('/api/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: imageData }),
+      });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error || 'Failed to extract courses from image');
+      }
+
+      const data: ExtractResponse = await response.json();
+
+      if (data.fallback_reason) {
+        setModelLabel('model alternatif');
+      }
+
+      if (data.success && data.courses.length > 0) {
+        setCourses(data.courses);
+        setFallbackReason(data.fallback_reason);
+        setState('reviewing');
+      } else {
+        setError('Tidak ada mata kuliah terdeteksi. Silakan gunakan input manual.');
+        setState('idle');
+      }
+    } catch (err) {
+      console.error('Upload error:', err);
+      const msg = err instanceof Error ? err.message : 'Gagal membaca gambar';
+      setError(`${msg}. Silakan gunakan input manual.`);
+      setState('idle');
+    }
+  };
+
+  const handleLookup = async (coursesToLookup: Course[]) => {
+    setState('looking_up');
+    setError(null);
+
+    try {
+      const response = await fetch('/api/lookup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ courses: coursesToLookup }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to lookup courses');
+      }
+
+      const data: LookupResponse = await response.json();
+      setResults(data.results);
+      setState('done');
+    } catch (err) {
+      console.error('Lookup error:', err);
+      setError('Gagal mencari kode enroll. Silakan coba lagi.');
+      setState('reviewing');
+    }
+  };
+
+  const handleReset = () => {
+    setState('idle');
+    setCourses([]);
+    setResults([]);
+    setFallbackReason(undefined);
+    setError(null);
+    setModelLabel('AI');
+  };
+
+  return (
+    <main className="min-h-screen bg-gray-100 py-8">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Pencari Kode Enroll
+          </h1>
+          <p className="text-gray-600">
+            Upload screenshot jadwal KRS untuk mendapatkan kode enroll otomatis
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        {error && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+            {error}
+          </div>
+        )}
+
+        {state === 'idle' || state === 'extracting' ? (
+          <UploadZone
+            onUpload={handleUpload}
+            isLoading={state === 'extracting'}
+            modelLabel={modelLabel}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        ) : null}
+
+        {state === 'reviewing' && (
+          <ExtractedList
+            courses={courses}
+            onCoursesChange={setCourses}
+            onSubmit={() => handleLookup(courses)}
+            isLoading={false}
+            fallbackReason={fallbackReason}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        )}
+
+        {state === 'looking_up' && (
+          <div className="text-center py-12">
+            <div className="animate-spin text-4xl mb-4 inline-block">⚙️</div>
+            <p className="text-lg text-gray-600">Mencari kode enroll...</p>
+          </div>
+        )}
+
+        {state === 'done' && (
+          <>
+            <div className="flex justify-between items-center mb-4">
+              <CopyAllButton results={results} />
+              <button
+                onClick={handleReset}
+                className="px-4 py-2 text-gray-600 border border-gray-300 rounded hover:bg-gray-50"
+              >
+                Upload Baru
+              </button>
+            </div>
+            <ResultTable results={results} />
+          </>
+        )}
+
+        {(state === 'idle' || state === 'extracting') && (
+          <div className="mt-8">
+            <ManualForm
+              onSubmit={handleLookup}
+              isLoading={false}
+            />
+          </div>
+        )}
+      </div>
+    </main>
   );
 }
