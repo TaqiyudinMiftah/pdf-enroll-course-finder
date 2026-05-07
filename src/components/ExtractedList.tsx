@@ -7,7 +7,7 @@ interface ExtractedListProps {
   courses: Course[];
   onCoursesChange: (courses: Course[]) => void;
   onSubmit: () => void;
-  isLoading: boolean;
+  onReset: () => void;
   fallbackReason?: string;
 }
 
@@ -15,7 +15,7 @@ export default function ExtractedList({
   courses,
   onCoursesChange,
   onSubmit,
-  isLoading,
+  onReset,
   fallbackReason,
 }: ExtractedListProps) {
   const handleChange = (index: number, field: keyof Course, value: string) => {
@@ -34,65 +34,127 @@ export default function ExtractedList({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold">Hasil Ekstraksi</h2>
-        {fallbackReason && (
-          <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">
-            Model alternatif digunakan
-          </span>
-        )}
-      </div>
-
-      <div className="space-y-3 mb-4">
-        {courses.map((course, index) => (
-          <div key={index} className="flex gap-2 items-start">
-            <input
-              type="text"
-              value={course.nama_mk}
-              onChange={(e) => handleChange(index, 'nama_mk', e.target.value)}
-              placeholder="Nama Mata Kuliah"
-              className="flex-1 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              value={course.kelas}
-              onChange={(e) => handleChange(index, 'kelas', e.target.value)}
-              placeholder="Kelas"
-              className="w-24 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="text"
-              value={course.prodi || ''}
-              onChange={(e) => handleChange(index, 'prodi', e.target.value)}
-              placeholder="Prodi"
-              className="w-32 px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              onClick={() => handleRemove(index)}
-              className="px-3 py-2 text-red-500 hover:bg-red-50 rounded"
-            >
-              x
-            </button>
+    <>
+      {/* Info Section */}
+      <div className="bg-white border border-slate-200 rounded-xl p-6 mb-8 flex items-center gap-6">
+        <div className="w-[120px] h-[120px] flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center">
+          <span className="material-symbols-outlined text-slate-300 text-5xl">description</span>
+        </div>
+        <div className="flex-grow">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-label uppercase tracking-wider">
+              Berhasil dibaca
+            </span>
+            {fallbackReason && (
+              <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-label uppercase tracking-wider">
+                Model alternatif
+              </span>
+            )}
           </div>
-        ))}
+          <h2 className="font-h2 text-h3 text-on-surface mb-1">
+            AI berhasil membaca {courses.length} mata kuliah dari jadwalmu
+          </h2>
+          <p className="text-body-sm text-outline">
+            Silakan tinjau data di bawah ini sebelum melanjutkan pencarian kode enroll.
+          </p>
+        </div>
       </div>
 
-      <div className="flex gap-2">
-        <button
-          onClick={handleAdd}
-          className="px-4 py-2 text-blue-600 border border-blue-600 rounded hover:bg-blue-50"
-        >
-          + Tambah Manual
-        </button>
+      {/* Main Editable Table Section */}
+      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead className="bg-slate-50 border-b border-slate-200">
+              <tr>
+                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-16">No</th>
+                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Nama Mata Kuliah</th>
+                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-32">Kelas</th>
+                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Program Studi</th>
+                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-20 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {courses.map((course, index) => (
+                <tr key={index} className="hover:bg-blue-50/30 transition-colors group">
+                  <td className="px-6 py-5 text-body-md text-outline">{index + 1}</td>
+                  <td className="px-6 py-5">
+                    <input
+                      type="text"
+                      value={course.nama_mk}
+                      onChange={(e) => handleChange(index, 'nama_mk', e.target.value)}
+                      className="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                    />
+                  </td>
+                  <td className="px-6 py-5">
+                    <input
+                      type="text"
+                      value={course.kelas}
+                      onChange={(e) => handleChange(index, 'kelas', e.target.value)}
+                      className="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                    />
+                  </td>
+                  <td className="px-6 py-5">
+                    <input
+                      type="text"
+                      value={course.prodi || ''}
+                      onChange={(e) => handleChange(index, 'prodi', e.target.value)}
+                      className="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                    />
+                  </td>
+                  <td className="px-6 py-5 text-center">
+                    <button
+                      onClick={() => handleRemove(index)}
+                      className="text-slate-400 hover:text-error transition-colors"
+                    >
+                      <span className="material-symbols-outlined">delete</span>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="p-4 border-t border-slate-100 flex justify-center">
+          <button
+            onClick={handleAdd}
+            className="flex items-center gap-2 text-primary font-medium hover:underline py-2"
+          >
+            <span className="material-symbols-outlined text-[18px]">add</span>
+            Tambah mata kuliah
+          </button>
+        </div>
+      </div>
+
+      {/* Manual Input Note */}
+      <div className="mt-6 flex justify-center">
+        <div className="bg-blue-50 text-blue-800 px-6 py-3 rounded-full flex items-center gap-3 border border-blue-100 text-body-sm shadow-sm">
+          <span className="material-symbols-outlined text-[20px]">info</span>
+          <span>
+            Hasil tidak akurat?{' '}
+            <button onClick={onReset} className="font-bold underline decoration-2 underline-offset-2">
+              Coba input manual
+            </button>
+          </span>
+        </div>
+      </div>
+
+      {/* Primary Actions */}
+      <div className="mt-12 flex flex-col items-center gap-4 max-w-md mx-auto">
         <button
           onClick={onSubmit}
-          disabled={isLoading || courses.length === 0}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400"
+          disabled={courses.length === 0}
+          className="w-full bg-primary-container text-on-primary py-4 rounded-xl font-h3 text-[18px] flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isLoading ? 'Mencari...' : 'Cari Kode Enroll'}
+          Cari Kode Enroll
+          <span className="material-symbols-outlined">arrow_forward</span>
+        </button>
+        <button
+          onClick={onReset}
+          className="text-slate-500 hover:text-primary transition-colors font-medium"
+        >
+          Ulangi upload
         </button>
       </div>
-    </div>
+    </>
   );
 }

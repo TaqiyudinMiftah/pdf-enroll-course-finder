@@ -8,68 +8,64 @@ interface ResultTableProps {
 }
 
 export default function ResultTable({ results }: ResultTableProps) {
-  const getStatusColor = (matchType: string) => {
-    switch (matchType) {
-      case 'exact':
-        return 'bg-green-100 text-green-800';
-      case 'kode_mk':
-        return 'bg-blue-100 text-blue-800';
-      case 'fuzzy':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'not_found':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const getStatusLabel = (matchType: string) => {
-    switch (matchType) {
-      case 'exact':
-        return '✓ Ditemukan';
-      case 'kode_mk':
-        return '✓ Kode MK';
-      case 'fuzzy':
-        return '✓ Mirip';
-      case 'not_found':
-        return '✗ Tidak ditemukan';
-      default:
-        return matchType;
-    }
-  };
-
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <h2 className="text-xl font-semibold mb-4">Hasil Pencarian</h2>
-
+    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden mb-8">
       <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b">
-              <th className="text-left py-2 px-4">Nama MK</th>
-              <th className="text-left py-2 px-4">Kelas</th>
-              <th className="text-left py-2 px-4">Kode Enroll</th>
-              <th className="text-left py-2 px-4">Status</th>
+        <table className="w-full text-left border-collapse">
+          <thead className="bg-slate-50 border-b border-slate-200">
+            <tr>
+              <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Nama Mata Kuliah</th>
+              <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Kelas</th>
+              <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Kode Enroll</th>
+              <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
-          <tbody>
-            {results.map((result, index) => (
-              <tr key={index} className="border-b">
-                <td className="py-3 px-4">{result.nama_mk}</td>
-                <td className="py-3 px-4">{result.kelas}</td>
-                <td className="py-3 px-4 font-mono">
-                  {result.kode_enroll || '-'}
-                </td>
-                <td className="py-3 px-4">
-                  <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(result.match_type)}`}>
-                    {getStatusLabel(result.match_type)}
-                  </span>
-                  {result.suggestion && (
-                    <p className="text-xs text-gray-500 mt-1">{result.suggestion}</p>
-                  )}
-                </td>
-              </tr>
-            ))}
+          <tbody className="divide-y divide-slate-100">
+            {results.map((result, index) => {
+              const isFound = result.found;
+              return (
+                <tr
+                  key={index}
+                  className={`hover:bg-slate-50/50 transition-colors ${
+                    !isFound ? 'bg-red-50/40 hover:bg-red-50/60' : ''
+                  }`}
+                >
+                  <td className="px-6 py-5">
+                    <p className="font-body-md font-semibold text-slate-900">{result.nama_mk}</p>
+                  </td>
+                  <td className="px-6 py-5">
+                    <span className="text-slate-600">{result.kelas}</span>
+                  </td>
+                  <td className="px-6 py-5">
+                    {isFound && result.kode_enroll ? (
+                      <span className="inline-block bg-slate-100 px-3 py-1.5 rounded font-mono text-lg text-slate-700 tracking-wider">
+                        {result.kode_enroll}
+                      </span>
+                    ) : (
+                      <div className="flex flex-col">
+                        <span className="font-mono text-lg text-slate-400">—</span>
+                        <span className="text-[10px] text-red-600 font-bold uppercase tracking-tighter">
+                          Hubungi admin
+                        </span>
+                      </div>
+                    )}
+                  </td>
+                  <td className="px-6 py-5">
+                    {isFound ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                        <span className="material-symbols-outlined text-[14px]">check_circle</span>
+                        Ditemukan
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">
+                        <span className="material-symbols-outlined text-[14px]">cancel</span>
+                        Tidak ditemukan
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

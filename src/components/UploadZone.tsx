@@ -4,11 +4,11 @@ import React, { useCallback } from 'react';
 
 interface UploadZoneProps {
   onUpload: (file: File) => void;
-  isLoading: boolean;
-  modelLabel?: string;
+  isLoading?: boolean;
+  onManualClick?: () => void;
 }
 
-export default function UploadZone({ onUpload, isLoading, modelLabel = 'AI' }: UploadZoneProps) {
+export default function UploadZone({ onUpload, isLoading = false, onManualClick }: UploadZoneProps) {
   const handleDrop = useCallback(
     (e: React.DragEvent<HTMLDivElement>) => {
       e.preventDefault();
@@ -35,46 +35,48 @@ export default function UploadZone({ onUpload, isLoading, modelLabel = 'AI' }: U
   }, []);
 
   return (
-    <div
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-      className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors cursor-pointer ${
-        isLoading
-          ? 'border-blue-400 bg-blue-50'
-          : 'border-gray-300 bg-gray-50 hover:border-blue-500'
-      }`}
-    >
-      <input
-        type="file"
-        accept="image/jpeg,image/png,image/webp"
-        onChange={handleChange}
-        className="hidden"
-        id="file-upload"
-        disabled={isLoading}
-      />
-      <label htmlFor="file-upload" className="cursor-pointer block">
-        {isLoading ? (
-          <>
-            <div className="animate-spin text-4xl mb-4 inline-block">⚙️</div>
-            <p className="text-lg font-medium text-blue-700 mb-2">
-              Membaca jadwal dengan {modelLabel}...
-            </p>
-            <p className="text-sm text-gray-500">
-              Proses ini bisa memakan waktu 10-60 detik
-            </p>
-          </>
-        ) : (
-          <>
-            <div className="text-4xl mb-4">📤</div>
-            <p className="text-lg font-medium text-gray-700 mb-2">
-              Klik atau drag & drop screenshot jadwal KRS
-            </p>
-            <p className="text-sm text-gray-500">
-              Format: JPG, PNG, WebP (maks 5MB)
-            </p>
-          </>
-        )}
-      </label>
+    <div className="w-full max-w-[480px] bg-white border border-slate-200 rounded-xl p-6 flex flex-col items-center">
+      <div
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        className={`w-full border-2 border-dashed border-primary-container rounded-xl bg-surface-container-low p-10 flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container transition-colors group ${
+          isLoading ? 'opacity-50 pointer-events-none' : ''
+        }`}
+      >
+        <input
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          onChange={handleChange}
+          className="hidden"
+          id="file-upload"
+          disabled={isLoading}
+        />
+        <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center">
+          <div className="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <span className="material-symbols-outlined text-primary text-[32px]">cloud_upload</span>
+          </div>
+          <p className="font-body-md font-semibold text-slate-900 mb-1 text-center">
+            Drag & drop screenshot jadwal, atau klik untuk pilih file
+          </p>
+          <p className="text-body-sm text-slate-500">JPG, PNG, WebP · Maks 5MB</p>
+        </label>
+      </div>
+
+      {/* Separator */}
+      <div className="w-full flex items-center gap-4 my-6">
+        <div className="h-[1px] flex-grow bg-slate-200" />
+        <span className="text-label text-slate-400 font-medium">atau</span>
+        <div className="h-[1px] flex-grow bg-slate-200" />
+      </div>
+
+      {/* Manual Link */}
+      <button
+        onClick={onManualClick}
+        className="font-body-md font-semibold text-primary hover:underline flex items-center gap-1 transition-all"
+      >
+        Input manual
+        <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
     </div>
   );
 }

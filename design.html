@@ -1,0 +1,1756 @@
+<!-- Landing Page - Initial State -->
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf8ff",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "background": "#faf8ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#5c647a",
+                        "surface-variant": "#e2e1ed",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container": "#ededf9",
+                        "on-surface": "#1a1b23",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed": "#001551",
+                        "on-surface-variant": "#434655",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3039",
+                        "secondary": "#565e74",
+                        "on-tertiary-fixed": "#390c00",
+                        "tertiary-fixed": "#ffdbcf",
+                        "inverse-on-surface": "#f0f0fb",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-container": "#a73400",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "surface-dim": "#d9d9e5",
+                        "surface-tint": "#2151da",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-container-high": "#e8e7f3",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "primary-container": "#1d4ed8",
+                        "surface-container-low": "#f3f2fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c5d7",
+                        "on-background": "#1a1b23",
+                        "on-primary-container": "#cad3ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-container": "#ffc9b7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "surface-container-highest": "#e2e1ed",
+                        "tertiary": "#7f2500",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "primary": "#0037b0",
+                        "outline": "#747686"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+        <div class="flex justify-between items-center h-16 w-full max-w-[1280px] mx-auto px-6 md:px-12">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-blue-700 dark:text-blue-500"
+                    data-icon="school">school</span>
+                <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 font-h2">Cari Kode
+                    Enroll</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 py-5"
+                    href="#">Beranda</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors py-5"
+                    href="#">Riwayat</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors py-5"
+                    href="#">Panduan</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden">
+                    <img alt="University Logo" class="w-full h-full object-cover"
+                        data-alt="A clean and professional university crest or academic seal designed with minimalist lines. The logo is displayed in a small, circular frame on a bright interface, symbolizing institutional authority and scholarly excellence within a modern digital portal. The color palette is predominantly dark slate against a soft white background."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcQBHIy-ZhKGgc-QcRnFzNCpd3MVcC3ZPAQadOZQGtzLZrvodyAfHS3spNb4WzmQDFy6ouBSM6V9c64T_C2uh179VADUB3pnYk8uCZpcIketf0Bsqt-LcUhNbCUcsyXS9hFw-bmfYWOm7aa_OnmdnyGEH5Mi0ABSc_5eERtj6CNSiFMlbMI1afd4OpMa2fqG9YuFpExxn2GPzsoBLyhedj_Lk-fXgWSx-v5RRZpJeBw_QatzfYe7UfzG_yBRgMls6ReBR2pkCA3Ks" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-xl">
+        <div class="max-w-[1280px] w-full flex flex-col items-center text-center">
+            <!-- Hero Section -->
+            <div class="mb-lg">
+                <h1 class="font-h1 text-h1 text-slate-900 mb-base max-w-2xl">
+                    Upload jadwal KRS-mu, dapatkan kode enroll seketika
+                </h1>
+                <p class="font-body-lg text-body-lg text-slate-600">
+                    Tidak perlu buka Looker Studio lagi. Cukup foto atau screenshot jadwal.
+                </p>
+            </div>
+            <!-- Upload Zone Card -->
+            <div
+                class="w-full max-w-[480px] bg-white border border-slate-200 rounded-xl p-md flex flex-col items-center">
+                <div
+                    class="w-full border-2 border-dashed border-primary-container rounded-xl bg-surface-container-low p-xl flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container transition-colors group">
+                    <div
+                        class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-[32px]"
+                            data-icon="cloud_upload">cloud_upload</span>
+                    </div>
+                    <p class="font-h3 text-body-md font-semibold text-slate-900 mb-xs">
+                        Drag &amp; drop screenshot jadwal, atau klik untuk pilih file
+                    </p>
+                    <p class="text-body-sm text-slate-500">
+                        JPG, PNG, WebP · Maks 5MB
+                    </p>
+                </div>
+                <!-- Separator -->
+                <div class="w-full flex items-center gap-4 my-md">
+                    <div class="h-[1px] flex-grow bg-slate-200"></div>
+                    <span class="text-label text-slate-400 font-medium">atau</span>
+                    <div class="h-[1px] flex-grow bg-slate-200"></div>
+                </div>
+                <!-- Manual Link -->
+                <a class="font-body-md font-semibold text-primary hover:underline flex items-center gap-1 transition-all"
+                    href="#">
+                    Input manual
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+                </a>
+            </div>
+            <!-- Feature Badges -->
+            <div class="mt-xl flex flex-wrap justify-center gap-base">
+                <div class="flex items-center gap-2 px-sm py-xs bg-white border border-slate-200 rounded-full">
+                    <span class="material-symbols-outlined text-primary text-[18px]" data-icon="bolt">bolt</span>
+                    <span class="text-label text-slate-600">Proses Instan</span>
+                </div>
+                <div class="flex items-center gap-2 px-sm py-xs bg-white border border-slate-200 rounded-full">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                        data-icon="verified_user">verified_user</span>
+                    <span class="text-label text-slate-600">Aman &amp; Privat</span>
+                </div>
+                <div class="flex items-center gap-2 px-sm py-xs bg-white border border-slate-200 rounded-full">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                        data-icon="auto_awesome">auto_awesome</span>
+                    <span class="text-label text-slate-600">Deteksi Otomatis</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 py-12 w-full max-w-[1280px] mx-auto px-6 md:px-12">
+            <p class="font-body-sm text-slate-500 dark:text-slate-400">
+                Sistem Akademik Fakultas — tidak menyimpan data apapun
+            </p>
+            <div class="flex gap-8">
+                <a class="font-body-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
+                    href="#">Kebijakan Privasi</a>
+                <a class="font-body-sm text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
+                    href="#">Bantuan</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Extracting State -->
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e1ed",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary-container": "#cad3ff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e2e1ed",
+                        "tertiary-container": "#a73400",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "surface-bright": "#faf8ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#1a1b23",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container": "#ededf9",
+                        "secondary": "#565e74",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#2151da",
+                        "on-surface": "#1a1b23",
+                        "outline-variant": "#c4c5d7",
+                        "outline": "#747686",
+                        "surface": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e7f3",
+                        "inverse-surface": "#2e3039",
+                        "on-secondary-container": "#5c647a",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#1d4ed8",
+                        "tertiary": "#7f2500",
+                        "primary": "#0037b0",
+                        "surface-dim": "#d9d9e5",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "inverse-primary": "#b7c4ff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#dae2fd",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface-container-low": "#f3f2fe",
+                        "on-primary-fixed": "#001551"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .progress-bar-fill {
+            width: 65%;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC] text-on-background font-body-md min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-white border-b border-slate-200 font-['Plus_Jakarta_Sans'] antialiased fixed top-0 w-full z-50">
+        <div class="flex justify-between items-center h-16 w-full max-w-[1280px] mx-auto px-6 md:px-12">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-blue-700 text-2xl" data-icon="school">school</span>
+                <span class="text-xl font-bold tracking-tight text-slate-900">Cari Kode Enroll</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-slate-600 hover:text-slate-900 transition-colors" href="#">Panduan</a>
+                <a class="text-slate-600 hover:text-slate-900 transition-colors" href="#">Tentang</a>
+                <div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200">
+                    <img alt="University Logo" class="w-full h-full object-cover"
+                        data-alt="A clean and professional logo for a university department, featuring a stylized crest and academic symbols. The design uses a professional blue and white color scheme, set against a soft, high-key studio lighting that emphasizes academic authority and modern digital efficiency."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6pkihMimRXnvcK4juGSTXmJlmdMR_FGIyaGfk-fC6Pxe-chk8Heztp9qNPSRzup5KltEB4l23T9gcr7TJaRO_7IGXK1yihaq0bAeuDXsoZLTBWhl8Y_J7WkT15qRfRHaZG2TqwqxV0ozv2fcj1Rp9Jve7S2PGRvLiSIDUyFgYpNlFt47bpalmUCxypDxpQG1V5EPgYzleJmWe4wiphMIwRGXdQ4H6VMpmQgG9O5N_5CUrGhEHx_0MUDf-XRcpMlsD43w8j1tMJSM" />
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-xl px-6">
+        <div class="max-w-[800px] mx-auto">
+            <!-- Processing Card -->
+            <div class="bg-white border border-outline-variant rounded-xl p-md md:p-xl shadow-sm">
+                <!-- Extraction Status -->
+                <div class="text-center mb-lg">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/10 mb-md">
+                        <span class="material-symbols-outlined text-primary text-3xl animate-pulse"
+                            data-icon="sync">sync</span>
+                    </div>
+                    <h2 class="font-h2 text-h2 text-on-background mb-base">Reading your schedule...</h2>
+                    <p class="font-body-md text-on-surface-variant max-w-[500px] mx-auto">
+                        Hang tight! We're analyzing your KRS to identify your courses, lecturers, and class schedules
+                        automatically.
+                    </p>
+                </div>
+                <!-- Progress Indicator Section -->
+                <div class="bg-surface-container-low rounded-xl p-md mb-lg">
+                    <div class="flex justify-between items-center mb-xs">
+                        <span class="font-label text-label text-primary">EXTRACTION PROGRESS</span>
+                        <span class="font-label text-label text-on-surface">65%</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden">
+                        <div
+                            class="bg-primary-container h-full rounded-full transition-all duration-1000 ease-out progress-bar-fill">
+                        </div>
+                    </div>
+                    <p class="mt-sm text-center font-body-sm text-on-surface-variant italic">
+                        "Almost there! We're identifying your subjects and classes..."
+                    </p>
+                </div>
+                <!-- File Preview Placeholder -->
+                <div
+                    class="border border-outline-variant border-dashed rounded-lg p-md bg-background flex items-center gap-md">
+                    <div
+                        class="w-20 h-24 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0 relative">
+                        <img class="w-full h-full object-cover opacity-50 grayscale"
+                            data-alt="A blurred close-up of a printed academic document with tables and text, representing a schedule or KRS document. The lighting is soft and natural, emphasizing a professional academic setting. The color palette is muted with whites and light grays, fitting the modern academic UI aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS6zjJ-BE25HCGytj02xU5RZn_1LE4Ln1-cP4dGPf5sxmXOf6-t1ddzagkS4F2W-IG3dfhSO_RIirMohomiBG2RaSxwD_MmhlWJDeNLiE8F4Q_MfoMbJipUQb8ZsWrCJGruXcxQ1_YP8TKEZ1iVeLYNOiMk6HGK2slTrda0lvD76svG8afot7khgKPgbTToIUGnTFjxikMQQcxz0eStc5EKSOmPW_3oR_BVap-nobZNt9Bcd8Ox7tZSeeX0Ghj6ACw13Wy-cZsTBo" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-outline text-3xl"
+                                data-icon="description">description</span>
+                        </div>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="font-label text-label text-outline mb-xs uppercase">Uploaded File</div>
+                        <h3 class="font-h3 text-body-lg text-on-background">KRS_Semester_Ganjil.png</h3>
+                        <div class="flex items-center gap-base text-on-surface-variant text-body-sm">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="check_circle">check_circle</span>
+                            <span>Upload successful</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <span class="material-symbols-outlined text-outline" data-icon="more_vert">more_vert</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Supporting Information Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md mt-lg">
+                <div class="flex flex-col items-center text-center p-md">
+                    <span class="material-symbols-outlined text-primary mb-sm" data-icon="security">security</span>
+                    <h4 class="font-h3 text-body-md mb-xs">Secure Processing</h4>
+                    <p class="text-body-sm text-on-surface-variant">Your data is processed locally and never stored on
+                        our servers.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-md">
+                    <span class="material-symbols-outlined text-primary mb-sm" data-icon="bolt">bolt</span>
+                    <h4 class="font-h3 text-body-md mb-xs">Fast Extraction</h4>
+                    <p class="text-body-sm text-on-surface-variant">OCR technology identifies courses in under 5
+                        seconds.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-md">
+                    <span class="material-symbols-outlined text-primary mb-sm" data-icon="edit_note">edit_note</span>
+                    <h4 class="font-h3 text-body-md mb-xs">Manual Review</h4>
+                    <p class="text-body-sm text-on-surface-variant">You'll have a chance to review and edit everything
+                        before saving.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 font-['Plus_Jakarta_Sans'] text-sm text-slate-500">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 py-12 w-full max-w-[1280px] mx-auto px-6 md:px-12">
+            <div class="flex items-center gap-2">
+                <span class="font-medium text-slate-900">Sistem Akademik Fakultas</span>
+                <span class="text-slate-300">|</span>
+                <span>tidak menyimpan data apapun</span>
+            </div>
+            <div class="flex gap-8">
+                <a class="hover:text-blue-600 transition-colors" href="#">Kebijakan Privasi</a>
+                <a class="hover:text-blue-600 transition-colors" href="#">Bantuan</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Hasil Kode Enroll -->
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e7f3",
+                        "tertiary-container": "#a73400",
+                        "on-primary-fixed": "#001551",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-secondary-fixed": "#131b2e",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-low": "#f3f2fe",
+                        "outline-variant": "#c4c5d7",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary-fixed": "#390c00",
+                        "primary": "#0037b0",
+                        "secondary-container": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "on-background": "#1a1b23",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-dim": "#d9d9e5",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747686",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-surface-variant": "#434655",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-highest": "#e2e1ed",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-surface": "#2e3039",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#cad3ff",
+                        "surface-tint": "#2151da",
+                        "inverse-primary": "#b7c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "secondary": "#565e74",
+                        "on-primary": "#ffffff",
+                        "background": "#faf8ff",
+                        "on-surface": "#1a1b23",
+                        "on-tertiary-container": "#ffc9b7",
+                        "surface-variant": "#e2e1ed",
+                        "primary-container": "#1d4ed8",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#7f2500",
+                        "surface-container": "#ededf9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "container-max": "1280px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .step-active {
+            position: relative;
+        }
+
+        .step-active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-background font-body-md">
+    <!-- TopAppBar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 lg:px-12 h-16 max-w-[1280px] mx-auto">
+            <div class="text-xl font-extrabold tracking-tighter text-blue-700 font-['Plus_Jakarta_Sans']">Cari Kode
+                Enroll</div>
+            <nav class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] text-sm tracking-tight">
+                <a class="text-slate-600 font-medium hover:text-blue-800 transition-colors duration-200" href="#">Find
+                    Code</a>
+                <a class="text-blue-700 border-b-2 border-blue-700 font-semibold transition-colors duration-200"
+                    href="#">History</a>
+                <a class="text-slate-600 font-medium hover:text-blue-800 transition-colors duration-200"
+                    href="#">Academic Calendar</a>
+                <a class="text-slate-600 font-medium hover:text-blue-800 transition-colors duration-200"
+                    href="#">Support</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button
+                    class="text-blue-700 font-medium text-sm px-4 py-2 hover:bg-slate-50 rounded-lg transition-all">Login</button>
+                <button
+                    class="bg-primary text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all">Register</button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1280px] mx-auto px-6 lg:px-12 py-12">
+        <!-- Step Indicator -->
+        <div class="flex items-center justify-center mb-12 gap-8 md:gap-16">
+            <div class="flex items-center gap-2 text-slate-400">
+                <span
+                    class="flex items-center justify-center w-6 h-6 rounded-full border border-slate-300 text-xs font-bold">1</span>
+                <span class="font-h3 text-body-sm font-semibold">Upload</span>
+            </div>
+            <div class="h-px w-8 md:w-12 bg-slate-200"></div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <span
+                    class="flex items-center justify-center w-6 h-6 rounded-full border border-slate-300 text-xs font-bold">2</span>
+                <span class="font-h3 text-body-sm font-semibold">Periksa hasil</span>
+            </div>
+            <div class="h-px w-8 md:w-12 bg-slate-200"></div>
+            <div class="flex items-center gap-2 text-primary step-active">
+                <span
+                    class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold">3</span>
+                <span class="font-h3 text-body-sm font-semibold">Kode enroll</span>
+            </div>
+        </div>
+        <!-- Summary Bar -->
+        <div
+            class="bg-green-50 border border-green-100 rounded-xl p-4 mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-green-500 text-white rounded-full p-1 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+                </div>
+                <p class="font-body-md font-semibold text-green-800">4 dari 5 mata kuliah berhasil ditemukan</p>
+            </div>
+            <button
+                class="flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition-all duration-200 group">
+                <span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+                Salin Semua Kode
+            </button>
+        </div>
+        <!-- Results Table -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden mb-8">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Nama Mata Kuliah
+                            </th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Kelas</th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Kode Enroll</th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="px-6 py-5">
+                                <p class="font-body-md font-semibold text-slate-900">Pemrograman Web</p>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-slate-600">IF-44-01</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-block bg-slate-100 px-3 py-1.5 rounded font-mono text-lg text-slate-700 tracking-wider">W3B-2024</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="check_circle">check_circle</span>
+                                    Ditemukan
+                                </span>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="px-6 py-5">
+                                <p class="font-body-md font-semibold text-slate-900">Basis Data</p>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-slate-600">IF-44-01</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-block bg-slate-100 px-3 py-1.5 rounded font-mono text-lg text-slate-700 tracking-wider">DB-KRS-9</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="check_circle">check_circle</span>
+                                    Ditemukan
+                                </span>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="px-6 py-5">
+                                <p class="font-body-md font-semibold text-slate-900">Algoritma dan Struktur Data</p>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-slate-600">IF-44-02</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-block bg-slate-100 px-3 py-1.5 rounded font-mono text-lg text-slate-700 tracking-wider">ALGO-77</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="check_circle">check_circle</span>
+                                    Ditemukan
+                                </span>
+                            </td>
+                        </tr>
+                        <!-- Row 4 (Error State) -->
+                        <tr class="bg-red-50/40 hover:bg-red-50/60 transition-colors">
+                            <td class="px-6 py-5">
+                                <p class="font-body-md font-semibold text-slate-900">Jaringan Komputer</p>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-slate-600">IF-44-01</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <div class="flex flex-col">
+                                    <span class="font-mono text-lg text-slate-400">—</span>
+                                    <span class="text-[10px] text-red-600 font-bold uppercase tracking-tighter">Hubungi
+                                        admin</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">
+                                    <span class="material-symbols-outlined text-[14px]" data-icon="cancel">cancel</span>
+                                    Tidak ditemukan
+                                </span>
+                            </td>
+                        </tr>
+                        <!-- Row 5 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="px-6 py-5">
+                                <p class="font-body-md font-semibold text-slate-900">Matematika Diskrit</p>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span class="text-slate-600">IF-44-03</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-block bg-slate-100 px-3 py-1.5 rounded font-mono text-lg text-slate-700 tracking-wider">DIS-202X</span>
+                            </td>
+                            <td class="px-6 py-5">
+                                <span
+                                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="check_circle">check_circle</span>
+                                    Ditemukan
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Centered Action -->
+        <div class="text-center mb-16">
+            <button
+                class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300">
+                Cari lagi
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+        </div>
+        <!-- Info Card Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+            <div class="p-8 bg-blue-50 border border-blue-100 rounded-xl">
+                <h3 class="font-h3 text-primary mb-4">Butuh bantuan?</h3>
+                <p class="text-slate-600 mb-4 font-body-md">Kode enroll berlaku untuk semester ini. Hubungi admin jika
+                    ada yang tidak sesuai dengan kurikulum Anda.</p>
+                <a class="text-blue-700 font-bold border-b-2 border-blue-200 hover:border-blue-700 transition-all"
+                    href="#">Lihat Panduan Pendaftaran →</a>
+            </div>
+            <div class="relative rounded-xl overflow-hidden h-[240px]">
+                <img alt="Students studying" class="w-full h-full object-cover"
+                    data-alt="A group of university students of diverse backgrounds sitting around a wooden table in a bright, modern library. They are focused on their laptops and textbooks, with soft natural light streaming through large windows. The atmosphere is academic and collaborative, reflecting a clean and professional digital enrollment environment. The color palette is composed of soft whites, light blues, and warm wood tones."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVGIDcElZ6lpzXFwB2xburzp5kYlQilpKoLWW4nGxzCUblIa_NiGOsh7AVRZGBXEcjjGYvTmIbydHh4-vULhetbUvuYovbz3BPoIb4XWXjMUMaF3V7hTYdpXFnxoPzboiqBsTB2ihyn53Jo59vembdhXwNUkTVBcnZZm_aCljl7UHy88yzMmgti2ink7g2q2fqA2ZqcMSdP-TEpO4PuC1cyw-dR5B-duRj-EZ0tNxUVFaVGpuVuOX0n3Z0N2gKBl7DAFokAyXdlTM" />
+            </div>
+        </div>
+    </main>
+    <!-- Footer Component -->
+    <footer class="bg-slate-50 border-t border-slate-200">
+        <div
+            class="w-full py-12 px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-4">
+            <div class="text-lg font-bold text-slate-900 font-['Plus_Jakarta_Sans']">Cari Kode Enroll</div>
+            <div
+                class="flex flex-wrap justify-center gap-6 font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest">
+                <a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Privacy Policy</a>
+                <a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Terms of Service</a>
+                <a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">API Documentation</a>
+                <a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Contact Admin</a>
+            </div>
+            <div
+                class="text-slate-500 text-xs font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-center md:text-right">
+                © 2024 Cari Kode Enroll. Academic Data Management System.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Periksa Hasil Ekstraksi -->
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e1ed",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#0037b0",
+                        "inverse-surface": "#2e3039",
+                        "on-primary-container": "#cad3ff",
+                        "surface-tint": "#2151da",
+                        "outline-variant": "#c4c5d7",
+                        "surface-container-high": "#e8e7f3",
+                        "primary-fixed": "#dce1ff",
+                        "on-surface": "#1a1b23",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#1a1b23",
+                        "outline": "#747686",
+                        "tertiary-container": "#a73400",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f2fe",
+                        "tertiary": "#7f2500",
+                        "secondary": "#565e74",
+                        "on-surface-variant": "#434655",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#1d4ed8",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-bright": "#faf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-highest": "#e2e1ed",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dae2fd",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container": "#ededf9",
+                        "on-tertiary-container": "#ffc9b7",
+                        "background": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-fixed": "#001551",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #F8FAFC;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col font-body-md text-on-background">
+    <!-- TopAppBar -->
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-8 py-4 max-w-[1280px] mx-auto">
+            <span
+                class="text-xl font-bold tracking-tight text-blue-700 dark:text-blue-400 font-['Plus_Jakarta_Sans']">Cari
+                Kode Enroll</span>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex gap-8">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 font-['Plus_Jakarta_Sans'] text-sm font-medium"
+                        href="#">Home</a>
+                    <a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-1 font-['Plus_Jakarta_Sans'] text-sm font-medium"
+                        href="#">Enrollment</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 font-['Plus_Jakarta_Sans'] text-sm font-medium"
+                        href="#">My Courses</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <span
+                        class="material-symbols-outlined text-slate-600 cursor-pointer hover:text-primary transition-colors"
+                        data-icon="help_outline">help_outline</span>
+                    <span
+                        class="material-symbols-outlined text-slate-600 cursor-pointer hover:text-primary transition-colors"
+                        data-icon="account_circle">account_circle</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow w-full max-w-[1280px] mx-auto px-8 py-10">
+        <!-- Step Indicator -->
+        <div class="flex items-center justify-center mb-12 gap-4">
+            <div class="flex items-center gap-2 text-slate-400">
+                <span class="font-label text-label bg-slate-100 px-2 py-1 rounded">1</span>
+                <span class="font-h3 text-[16px] font-medium">Upload</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300" data-icon="chevron_right">chevron_right</span>
+            <div class="flex items-center gap-2 text-primary">
+                <span class="font-label text-label bg-primary-fixed px-2 py-1 rounded text-primary">2</span>
+                <span class="font-h3 text-[16px] font-bold">Periksa hasil</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300" data-icon="chevron_right">chevron_right</span>
+            <div class="flex items-center gap-2 text-slate-400">
+                <span class="font-label text-label bg-slate-100 px-2 py-1 rounded">3</span>
+                <span class="font-h3 text-[16px] font-medium">Kode enroll</span>
+            </div>
+        </div>
+        <!-- Info Section -->
+        <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8 flex items-center gap-6">
+            <div
+                class="w-[120px] h-[120px] flex-shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
+                <img alt="Uploaded Schedule Thumbnail" class="w-full h-full object-cover opacity-80"
+                    data-alt="A close-up, high-angle shot of a printed university class schedule lying on a clean white desk. The lighting is bright and natural, coming from a side window, emphasizing the crisp black text and grid lines on the paper. The overall aesthetic is organized and academic, fitting a modern digital education environment with a soft, clean palette."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQuSPuVzV9N-qmVmQnSzwTIGL4dOAzkp48JV5fqa0qUK0LUmW11AwgQwr2eCmVrjN38aW3EHVA5Gv-B6PUpBCy9CKjJxGDe4mL-e9oOHTovh5RfgYJ0R0VWZCS_5WLi-P9KSM7v-rqh7yU_aTAOp4amTGRUZiOBwAaFKvOb4LKf8FOce8XwfqonRtHRAKuKMLPoELSxkNvYvOGLn57AbMr1EB3Xfg-ncQqeWRkCYHnahgW5NOSFuFVt8w1jpo4sDJMNRVeC0owXKI" />
+            </div>
+            <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-2">
+                    <span
+                        class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-label uppercase tracking-wider">Berhasil
+                        dibaca</span>
+                </div>
+                <h2 class="font-h2 text-h3 text-on-surface mb-1">AI berhasil membaca 5 mata kuliah dari jadwalmu</h2>
+                <p class="text-body-sm text-outline">Silakan tinjau data di bawah ini sebelum melanjutkan pencarian kode
+                    enroll.</p>
+            </div>
+        </div>
+        <!-- Main Editable Table Section -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-16">No</th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Nama Mata Kuliah
+                            </th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-32">Kelas</th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Program Studi</th>
+                            <th class="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-20 text-center">
+                                Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-5 text-body-md text-outline">1</td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Pemrograman Web" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="IF-44-01" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Informatika" />
+                            </td>
+                            <td class="px-6 py-5 text-center">
+                                <button class="text-slate-400 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-slate-50/50 hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-5 text-body-md text-outline">2</td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Basis Data" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="IF-44-01" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Informatika" />
+                            </td>
+                            <td class="px-6 py-5 text-center">
+                                <button class="text-slate-400 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-5 text-body-md text-outline">3</td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Algoritma dan Struktur Data" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="IF-44-02" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Informatika" />
+                            </td>
+                            <td class="px-6 py-5 text-center">
+                                <button class="text-slate-400 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="bg-slate-50/50 hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-5 text-body-md text-outline">4</td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Jaringan Komputer" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="IF-44-01" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Informatika" />
+                            </td>
+                            <td class="px-6 py-5 text-center">
+                                <button class="text-slate-400 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-5 text-body-md text-outline">5</td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Matematika Diskrit" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="IF-44-03" />
+                            </td>
+                            <td class="px-6 py-5">
+                                <input
+                                    class="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
+                                    type="text" value="Informatika" />
+                            </td>
+                            <td class="px-6 py-5 text-center">
+                                <button class="text-slate-400 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="p-4 border-t border-slate-100 flex justify-center">
+                <button class="flex items-center gap-2 text-primary font-medium hover:underline py-2">
+                    <span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    Tambah mata kuliah
+                </button>
+            </div>
+        </div>
+        <!-- Manual Input Note -->
+        <div class="mt-6 flex justify-center">
+            <div
+                class="bg-blue-50 text-blue-800 px-6 py-3 rounded-full flex items-center gap-3 border border-blue-100 text-body-sm shadow-sm">
+                <span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+                <span>Hasil tidak akurat? <a class="font-bold underline decoration-2 underline-offset-2" href="#">Coba
+                        input manual</a></span>
+            </div>
+        </div>
+        <!-- Primary Actions -->
+        <div class="mt-12 flex flex-col items-center gap-4 max-w-md mx-auto">
+            <button
+                class="w-full bg-primary-container text-on-primary py-4 rounded-xl font-h3 text-[18px] flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md active:scale-[0.98]">
+                Cari Kode Enroll
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+            <button class="text-slate-500 hover:text-primary transition-colors font-medium">
+                Ulangi upload
+            </button>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-auto">
+        <div
+            class="w-full px-8 py-10 max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col gap-2 items-center md:items-start">
+                <span class="text-lg font-semibold text-slate-900 dark:text-slate-100">Cari Kode Enroll</span>
+                <p class="font-['Inter'] text-xs font-normal text-slate-500 dark:text-slate-400">© 2024 Cari Kode
+                    Enroll. All rights reserved.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline underline-offset-4 font-['Inter'] text-xs font-normal"
+                    href="#">Privacy Policy</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline underline-offset-4 font-['Inter'] text-xs font-normal"
+                    href="#">Terms of Service</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline underline-offset-4 font-['Inter'] text-xs font-normal"
+                    href="#">University Portal</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 underline underline-offset-4 font-['Inter'] text-xs font-normal"
+                    href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Processing Schedule... -->
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Processing Schedule - Cari Kode Enroll</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf8ff",
+                        "background": "#faf8ff",
+                        "primary": "#0037b0",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1d4ed8",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-dim": "#d9d9e5",
+                        "on-surface-variant": "#434655",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e1ed",
+                        "tertiary-container": "#a73400",
+                        "surface-tint": "#2151da",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3039",
+                        "surface-bright": "#faf8ff",
+                        "tertiary": "#7f2500",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "secondary-container": "#dae2fd",
+                        "secondary": "#565e74",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-primary-container": "#cad3ff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container": "#ededf9",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001551",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-background": "#1a1b23",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "outline": "#747686",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "surface-container-high": "#e8e7f3",
+                        "secondary-fixed": "#dae2fd",
+                        "on-surface": "#1a1b23",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f2fe",
+                        "outline-variant": "#c4c5d7",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container-highest": "#e2e1ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#F8FAFC] min-h-screen flex flex-col font-body-md text-on-surface antialiased">
+    <!-- TopAppBar -->
+    <header
+        class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 docked full-width">
+        <div class="max-w-[1280px] mx-auto px-8 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <span
+                    class="text-xl font-extrabold tracking-tight text-blue-700 dark:text-blue-400 font-['Plus_Jakarta_Sans']">Cari
+                    Kode Enroll</span>
+                <nav class="hidden md:flex items-center gap-6 self-end h-full">
+                    <a class="font-['Plus_Jakarta_Sans'] text-sm text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-4 font-bold transition-colors duration-200"
+                        href="#">Browse Courses</a>
+                    <a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-600 dark:text-slate-400 pb-4 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200"
+                        href="#">My Schedule</a>
+                    <a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-600 dark:text-slate-400 pb-4 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200"
+                        href="#">Requirements</a>
+                    <a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-600 dark:text-slate-400 pb-4 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200"
+                        href="#">Calendar</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <span
+                        class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors"
+                        data-icon="notifications">notifications</span>
+                    <span
+                        class="material-symbols-outlined text-slate-500 cursor-pointer hover:text-primary transition-colors"
+                        data-icon="help_outline">help_outline</span>
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-4 py-2 rounded-xl text-sm font-semibold active:scale-95 transition-transform">Sign
+                    In</button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-8 py-xl">
+        <div class="w-full max-w-[1280px] grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
+            <!-- Left Side: Narrative -->
+            <div class="lg:col-span-7 space-y-md">
+                <div
+                    class="inline-flex items-center px-3 py-1 bg-secondary-container text-primary rounded-full text-label uppercase tracking-widest">
+                    Academic Registry
+                </div>
+                <h1 class="font-h1 text-h1 text-on-surface">Digital Intelligence for your Academic Journey.</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Our AI-powered engine is currently analyzing your semester schedule to extract course codes,
+                    credits, and timing for a seamless enrollment experience.
+                </p>
+                <div class="flex items-center gap-md pt-base">
+                    <div class="flex -space-x-2">
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                            <img alt="User 1"
+                                data-alt="A professional headshot of a female university student looking confident and scholarly. The background is a brightly lit, modern campus setting with soft architectural details. The lighting is high-key and clean, matching the academic light-mode UI aesthetic with soft blue and white tones."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgGaJgjzhjif64YEoTisdL5A7a7iAwVtZkPVhJi60-MDmoPhlrDobCbPEG7aI8dLk4d-3iPPIg0iB-v6QdOw6DHQfzO1E9mre9j1LG4jiUN_d3BPlB2b7ioDQtXE6RNiyolcIMbvCWbPuw-J_nqnvM6LkTChR23fsRcWqKO51hXLie_1oGDYNh_g7NIVrb5RFvLnTj2Jq4H4p23mLvjUTR-zyOPH1dlgS31dVK5NTDLii8EAzHleyXFSrorjolGFNWb1GzjXD8_OE" />
+                        </div>
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                            <img alt="User 2"
+                                data-alt="A portrait of a male university professor in a contemporary office, exuding authority and intelligence. The image is captured with professional studio lighting that emphasizes clarity and detail. The overall atmosphere is calm and reliable, aligned with the corporate academic design system."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIu9T87zUZrQ7_swXVzFu2w34c2wSktupfVqClpwwfmuAibVIIhjMLvtPEVLvUPZnQn1GAdQRg2WsA6tLtMKN5IhYVUT96718nywdVx4B9XOAMbllFZtRFWXf1rHGmGFpQtzKS9_tpzwnLu90qhnpNkHCJnt8MgZ5wSlSUxQ0wspMLdnlwHSiW5mQ7UQyqK64Slb-hfWEgLF9orIl6IkO0SvzF-4ocQhA-hAo8R17hFHHMqJ8tR75E2vQDNzTYdxjieLVZd1mW5JU" />
+                        </div>
+                        <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                            <img alt="User 3"
+                                data-alt="A smiling young researcher in a minimalist laboratory environment, looking directly at the camera. The lighting is crisp and bright, reflecting a high-efficiency digital environment. The color palette is composed of cool whites and subtle blue accents, maintaining visual consistency with the modern academic brand."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBpFvCfHfEivqCujnRAKhPKVVtgVxTxcgv0M1M2u-W3d4nZDFvAbjSZhnCXtcmV3CtdpQtCFJ8cGcWmuqIzSwIRg6fC16DYlrwsMJ0C_D77UnJegNwJAdxYV5nd6rfYuRz4yUtYmVg9vojfZ7F_4jbdeNYPbVGDIpyHPBwGIJfkCJb-7Vcb5ft5EGclFLb8opwlLh2Ib0kVspt5EataAbWxv4sz31TW1QLBmB06Lc9UQFCts5b-IK439gHJIylsWoo7Y2g7Ey47FA" />
+                        </div>
+                    </div>
+                    <span class="text-label text-on-surface-variant">JOINED BY 2,000+ STUDENTS TODAY</span>
+                </div>
+            </div>
+            <!-- Right Side: Processing Zone -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div
+                    class="relative w-full max-w-[480px] h-[360px] rounded-xl border-2 border-[#1D4ED8] bg-white overflow-hidden flex flex-col items-center justify-center">
+                    <!-- Blurred Background Preview -->
+                    <div class="absolute inset-0 z-0">
+                        <img alt="Schedule Preview" class="w-full h-full object-cover blur-sm opacity-30"
+                            data-alt="A close-up, slightly blurred view of a complex university academic schedule printed on a crisp white document. The document features structured tables with text like course names and codes. The lighting is bright and even, creating a clean, modern atmosphere that fits perfectly within a light-themed academic management interface."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ_BjwCbmDnqHl-j-Ds0rNByztmDdYUwHBCK7Q7ycx8QCd0YTiirBbkAX0AHVCihVit71MvvXSG-Gov-mJgwOpCOyBKNYT61hRwbRd9_KHj8gEYg6MpMdXu8iAzT0g9hm9eUxQc6-WotGBG4tWZl0mgGDiVyhChDwDdhPYPh4GL9O7RA7J0oAHLfyo8QN4q7UL0qVcGgH3nQ_cvu2mKTtUcIoNH8oDjbtq5qtJ4PDP0Z4vGv1ZWwAZA5t1YRh2rYisTcGnOJq3Sp4" />
+                    </div>
+                    <!-- AI Badge -->
+                    <div class="absolute top-4 right-4 z-20">
+                        <span
+                            class="bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-tighter shadow-sm flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]"
+                                style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            Menggunakan AI Nemotron
+                        </span>
+                    </div>
+                    <!-- Centered Processing UI -->
+                    <div
+                        class="relative z-10 glass-overlay p-8 rounded-xl flex flex-col items-center text-center shadow-lg border border-white/50">
+                        <div class="relative w-16 h-16 mb-4">
+                            <div class="absolute inset-0 border-4 border-slate-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-t-primary rounded-full animate-spin-custom">
+                            </div>
+                        </div>
+                        <h3 class="font-h3 text-primary mb-1">Membaca jadwal kuliah...</h3>
+                        <p class="font-body-sm text-slate-500">Biasanya selesai dalam 5–10 detik</p>
+                    </div>
+                    <!-- Tonal Accents -->
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-100">
+                        <div class="h-full bg-primary w-2/3 transition-all duration-1000 ease-in-out"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 w-full mt-auto">
+        <div class="max-w-[1280px] mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col gap-2 text-center md:text-left">
+                <span class="text-lg font-bold text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans']">Cari Kode
+                    Enroll</span>
+                <p
+                    class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500">
+                    © 2024 Cari Kode Enroll. University Academic Registry.
+                </p>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-opacity opacity-100 hover:opacity-80"
+                    href="#">Privacy Policy</a>
+                <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-opacity opacity-100 hover:opacity-80"
+                    href="#">Terms of Service</a>
+                <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-opacity opacity-100 hover:opacity-80"
+                    href="#">Help Desk</a>
+                <a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-wider text-slate-500 dark:text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-opacity opacity-100 hover:opacity-80"
+                    href="#">Accessibility</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<!-- Input Manual Mata Kuliah -->
+<!DOCTYPE html>
+
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-background": "#1a1b23",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "outline": "#747686",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-container": "#1d4ed8",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#cad3ff",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-surface": "#1a1b23",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "on-error": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-tint": "#2151da",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "tertiary": "#7f2500",
+                        "surface-container-highest": "#e2e1ed",
+                        "surface-container-high": "#e8e7f3",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed": "#ffdbcf",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f3f2fe",
+                        "on-secondary-fixed": "#131b2e",
+                        "inverse-primary": "#b7c4ff",
+                        "primary": "#0037b0",
+                        "surface-variant": "#e2e1ed",
+                        "secondary-container": "#dae2fd",
+                        "background": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001551",
+                        "inverse-surface": "#2e3039",
+                        "outline-variant": "#c4c5d7",
+                        "surface-dim": "#d9d9e5",
+                        "surface": "#faf8ff",
+                        "tertiary-container": "#a73400",
+                        "secondary": "#565e74"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "label": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .input-glow:focus {
+            outline: none;
+            border-color: #1D4ED8;
+            box-shadow: 0 0 0 2px rgba(29, 78, 216, 0.1);
+        }
+    </style>
+</head>
+
+<body class="text-on-background min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-blue-700 dark:text-blue-500 cursor-pointer"
+                    data-icon="arrow_back">arrow_back</span>
+                <span class="text-lg font-bold text-slate-900 dark:text-white">Enrollment Finder</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <img alt="Faculty Logo" class="h-8 w-8 object-contain"
+                    data-alt="A minimalist logo for an academic faculty, featuring a stylized graduation cap symbol in professional navy blue and silver. The design is modern, flat, and vector-style, set against a clean white background. It conveys authority and educational excellence within a contemporary digital portal interface."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWrUdAAbv8zrCan53ig6fk8mNmCaAP1yYY4UTwPdsHMhwO-SYClVERl5l6Tu3ZHu0C-idZ8ZR1UjsEHVpz3aVnUMOAkWh-R0jU414u8i1qLB_G8S9HQlR1VgLxLtvEZQWXrgR5IvT_yB1yLzjw20WgxAidPwBLCLnd3UtmoSel5Ri3GYiECasYpZvvUgAfb4AlFvD7k28n37f15skobYAkPV73cwY2NT8uuyR-5QUA3RXqRLiBg9YUUiwRWEABfaF89zwMbtUM8gE" />
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow flex flex-col items-center py-xl px-md">
+        <div class="w-full max-w-[1000px]">
+            <!-- Navigation Back -->
+            <button
+                class="flex items-center gap-2 text-primary font-body-sm mb-base hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined" data-icon="arrow_back"
+                    style="font-size: 18px;">arrow_back</span>
+                <span class="font-medium">Kembali ke upload</span>
+            </button>
+            <!-- Page Heading -->
+            <div class="mb-lg">
+                <h1 class="font-h2 text-h2 text-on-surface mb-xs">Input manual mata kuliah</h1>
+                <p class="font-body-md text-on-surface-variant">Ketik nama mata kuliah dan kelas secara langsung</p>
+            </div>
+            <!-- Form Container -->
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md">
+                <div class="space-y-md">
+                    <!-- Column Labels (Desktop Only) -->
+                    <div class="hidden md:grid grid-cols-12 gap-gutter px-2">
+                        <div class="col-span-5"><span
+                                class="font-label text-label text-on-surface-variant uppercase tracking-wider">Nama Mata
+                                Kuliah</span></div>
+                        <div class="col-span-2"><span
+                                class="font-label text-label text-on-surface-variant uppercase tracking-wider">Kelas</span>
+                        </div>
+                        <div class="col-span-4"><span
+                                class="font-label text-label text-on-surface-variant uppercase tracking-wider">Program
+                                Studi</span></div>
+                        <div class="col-span-1"></div>
+                    </div>
+                    <!-- Row 1 -->
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end border-b border-outline-variant pb-md md:border-none md:pb-0">
+                        <div class="col-span-1 md:col-span-5">
+                            <label class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Nama Mata
+                                Kuliah</label>
+                            <input
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all"
+                                placeholder="Contoh: Algoritma &amp; Pemrograman" type="text"
+                                value="Algoritma &amp; Pemrograman" />
+                        </div>
+                        <div class="col-span-1 md:col-span-2">
+                            <label
+                                class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Kelas</label>
+                            <input
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all"
+                                placeholder="IF-44-01" type="text" value="IF-44-01" />
+                        </div>
+                        <div class="col-span-1 md:col-span-4">
+                            <label class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Program
+                                Studi</label>
+                            <select
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all appearance-none">
+                                <option>Informatika</option>
+                                <option>Sistem Informasi</option>
+                                <option>Teknologi Informasi</option>
+                            </select>
+                        </div>
+                        <div class="col-span-1 md:col-span-1 flex justify-end md:justify-center">
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-error transition-colors rounded-full hover:bg-error/5">
+                                <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end border-b border-outline-variant pb-md md:border-none md:pb-0">
+                        <div class="col-span-1 md:col-span-5">
+                            <label class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Nama Mata
+                                Kuliah</label>
+                            <input
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all"
+                                placeholder="Contoh: Kalkulus" type="text" />
+                        </div>
+                        <div class="col-span-1 md:col-span-2">
+                            <label
+                                class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Kelas</label>
+                            <input
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all"
+                                placeholder="A" type="text" />
+                        </div>
+                        <div class="col-span-1 md:col-span-4">
+                            <label class="block md:hidden font-label text-label text-on-surface-variant mb-xs">Program
+                                Studi</label>
+                            <select
+                                class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md input-glow transition-all appearance-none">
+                                <option disabled="" selected="">Pilih Program Studi</option>
+                                <option>Informatika</option>
+                                <option>Sistem Informasi</option>
+                                <option>Teknologi Informasi</option>
+                            </select>
+                        </div>
+                        <div class="col-span-1 md:col-span-1 flex justify-end md:justify-center">
+                            <button
+                                class="p-2 text-on-surface-variant hover:text-error transition-colors rounded-full hover:bg-error/5">
+                                <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Button -->
+                <button
+                    class="mt-md flex items-center gap-2 text-primary font-body-md font-semibold hover:opacity-80 transition-all">
+                    <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    <span>Tambah mata kuliah</span>
+                </button>
+            </div>
+            <!-- Main CTA -->
+            <div class="mt-lg flex flex-col items-center">
+                <button
+                    class="w-full md:w-auto md:min-w-[320px] px-lg py-4 bg-primary text-on-primary rounded-xl font-h3 flex items-center justify-center gap-3 shadow-md hover:opacity-90 active:scale-[0.98] transition-all">
+                    <span>Cari Kode Enroll</span>
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="mt-auto py-md border-t border-slate-200 bg-surface-container-low text-center">
+        <p class="font-body-sm text-on-surface-variant opacity-70">
+            Sistem Akademik Fakultas — tidak menyimpan data apapun
+        </p>
+    </footer>
+</body>
+
+</html>

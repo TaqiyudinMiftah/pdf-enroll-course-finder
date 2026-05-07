@@ -12,12 +12,9 @@ export default function CopyAllButton({ results }: CopyAllButtonProps) {
 
   const handleCopy = async () => {
     const foundResults = results.filter((r) => r.found && r.kode_enroll);
-    
     if (foundResults.length === 0) return;
 
-    const text = foundResults
-      .map((r) => `${r.nama_mk} (${r.kelas}): ${r.kode_enroll}`)
-      .join('\n');
+    const text = foundResults.map((r) => `${r.nama_mk} (${r.kelas}): ${r.kode_enroll}`).join('\n');
 
     try {
       await navigator.clipboard.writeText(text);
@@ -29,15 +26,15 @@ export default function CopyAllButton({ results }: CopyAllButtonProps) {
   };
 
   const foundCount = results.filter((r) => r.found).length;
-
   if (foundCount === 0) return null;
 
   return (
     <button
       onClick={handleCopy}
-      className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+      className="flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary rounded-lg font-semibold text-sm hover:bg-primary hover:text-white transition-all duration-200 group"
     >
-      {copied ? '✓ Tersalin!' : `📋 Salin Semua Kode (${foundCount})`}
+      <span className="material-symbols-outlined text-[18px]">{copied ? 'check' : 'content_copy'}</span>
+      {copied ? 'Tersalin!' : 'Salin Semua Kode'}
     </button>
   );
 }

@@ -1,0 +1,694 @@
+Program Studi,Kode MK,Nama MK,Kelas,kode enroll course kelas
+Teknologi Informasi,CSD60706,Administrasi Basis Data,A,TI-ABDta-A
+Teknologi Informasi,CIT62015,Administrasi Sistem,E,TI-ASem-E
+Teknologi Informasi,CIT62015,Administrasi Sistem,C,TI-ASem-C
+Teknologi Informasi,CIT62015,Administrasi Sistem,F,TI-ASem-F
+Teknologi Informasi,CIT62015,Administrasi Sistem,A,TI-ASem-A
+Teknologi Informasi,CIT62015,Administrasi Sistem,D,TI-ASem-D
+Teknologi Informasi,CIT62015,Administrasi Sistem,B,TI-ASem-B
+Teknologi Informasi,CIT62011,Aljabar Linier dan Matriks,D,TI-ALdMks-D
+Teknologi Informasi,CIT62011,Aljabar Linier dan Matriks,E,TI-ALdMks-E
+Teknologi Informasi,CIT62011,Aljabar Linier dan Matriks,C,TI-ALdMks-C
+Teknologi Informasi,CIT62011,Aljabar Linier dan Matriks,B,TI-ALdMks-B
+Teknologi Informasi,CIT62011,Aljabar Linier dan Matriks,A,TI-ALdMks-A
+Teknologi Informasi,MPK60007,Bahasa Indonesia,N7J,TI-BIia-N7J
+Teknologi Informasi,MPK60007,Bahasa Indonesia,N7K,TI-BIia-N7K
+Teknologi Informasi,MPK60007,Bahasa Indonesia,N7L,TI-BIia-N7L
+Teknologi Informasi,MPK60007,Bahasa Indonesia,N7H,TI-BIia-N7H
+Teknologi Informasi,MPK60007,Bahasa Indonesia,N7I,TI-BIia-N7I
+Teknologi Informasi,CSD60707,Big Data dan Analitik,A,TI-BDdAik-A
+Teknologi Informasi,COM60061,Capstone Project,A,TI-CPct-A
+Teknologi Informasi,COM60061,Capstone Project,B,TI-CPct-B
+Teknologi Informasi,COM60061,Capstone Project,C,TI-CPct-C
+Teknologi Informasi,COM60061,Capstone Project,D,TI-CPct-D
+Teknologi Informasi,COM60061,Capstone Project,E,TI-CPct-E
+Teknologi Informasi,CIT62001,Dasar Desain Antarmuka Pengguna,B,TI-DDAPna-B
+Teknologi Informasi,CIT62001,Dasar Desain Antarmuka Pengguna,D,TI-DDAPna-D
+Teknologi Informasi,CIT62001,Dasar Desain Antarmuka Pengguna,A,TI-DDAPna-A
+Teknologi Informasi,CIT62001,Dasar Desain Antarmuka Pengguna,C,TI-DDAPna-C
+Teknologi Informasi,CIT62001,Dasar Desain Antarmuka Pengguna,E,TI-DDAPna-E
+Teknologi Informasi,CIT60056,Data Warehouse,A,TI-DWse-A
+Teknologi Informasi,CIT60056,Data Warehouse,B,TI-DWse-B
+Teknologi Informasi,CSD60704,Desain Basis Data,A,TI-DBDta-A
+Teknologi Informasi,CSD60704,Desain Basis Data,B,TI-DBDta-B
+Teknologi Informasi,CSD60704,Desain Basis Data,C,TI-DBDta-C
+Teknologi Informasi,CSD60704,Desain Basis Data,D,TI-DBDta-D
+Teknologi Informasi,CSD60704,Desain Basis Data,E,TI-DBDta-E
+Teknologi Informasi,CIT60055,Forensik Dijital,A,TI-FDal-A
+Teknologi Informasi,CIT62022,Implementasi dan Pengujian Sistem Informasi,C,TI-IdPSIsi-C
+Teknologi Informasi,CIT62022,Implementasi dan Pengujian Sistem Informasi,A,TI-IdPSIsi-A
+Teknologi Informasi,CIT62022,Implementasi dan Pengujian Sistem Informasi,B,TI-IdPSIsi-B
+Teknologi Informasi,CIT62022,Implementasi dan Pengujian Sistem Informasi,E,TI-IdPSIsi-E
+Teknologi Informasi,CIT62022,Implementasi dan Pengujian Sistem Informasi,D,TI-IdPSIsi-D
+Teknologi Informasi,CIT60048,Information Retrieval,B,TI-IRal-B
+Teknologi Informasi,CIT60048,Information Retrieval,A,TI-IRal-A
+Teknologi Informasi,CSD60714,Jaminan Kualitas Perangkat Lunak,A,TI-JKPLak-A
+Teknologi Informasi,CSD60714,Jaminan Kualitas Perangkat Lunak,B,TI-JKPLak-B
+Teknologi Informasi,CSD60714,Jaminan Kualitas Perangkat Lunak,C,TI-JKPLak-C
+Teknologi Informasi,CSD60713,Jaringan Terapan,A,TI-JTan-A
+Teknologi Informasi,CIT60044,Keamanan Data dan Privasi,A,TI-KDdPsi-A
+Teknologi Informasi,CIT60044,Keamanan Data dan Privasi,B,TI-KDdPsi-B
+Teknologi Informasi,CSD60709,Keamanan Siber,A,TI-KSer-A
+Teknologi Informasi,CSD60709,Keamanan Siber,C,TI-KSer-C
+Teknologi Informasi,CSD60709,Keamanan Siber,D,TI-KSer-D
+Teknologi Informasi,CSD60709,Keamanan Siber,E,TI-KSer-E
+Teknologi Informasi,CSD60709,Keamanan Siber,B,TI-KSer-B
+Teknologi Informasi,CIT62023,Kecerdasan Buatan dan Pembelajaran Mesin,E,TI-KBdPMin-E
+Teknologi Informasi,CIT62023,Kecerdasan Buatan dan Pembelajaran Mesin,D,TI-KBdPMin-D
+Teknologi Informasi,CIT62023,Kecerdasan Buatan dan Pembelajaran Mesin,C,TI-KBdPMin-C
+Teknologi Informasi,CIT62023,Kecerdasan Buatan dan Pembelajaran Mesin,B,TI-KBdPMin-B
+Teknologi Informasi,CIT62023,Kecerdasan Buatan dan Pembelajaran Mesin,A,TI-KBdPMin-A
+Teknologi Informasi,MPK60006,Kewarganegaraan,N6G,TI-Kan-N6G
+Teknologi Informasi,MPK60006,Kewarganegaraan,N6H,TI-Kan-N6H
+Teknologi Informasi,MPK60006,Kewarganegaraan,N6I,TI-Kan-N6I
+Teknologi Informasi,MPK60006,Kewarganegaraan,N6J,TI-Kan-N6J
+Teknologi Informasi,MPK60006,Kewarganegaraan,N6K,TI-Kan-N6K
+Teknologi Informasi,CIT60045,Kriptografi,A,TI-Kfi-A
+Teknologi Informasi,CIT60031,Manajemen Proyek Teknologi Informasi,A,TI-MPTIsi-A
+Teknologi Informasi,CIT60031,Manajemen Proyek Teknologi Informasi,B,TI-MPTIsi-B
+Teknologi Informasi,CIT60031,Manajemen Proyek Teknologi Informasi,C,TI-MPTIsi-C
+Teknologi Informasi,COM60024,Pemrograman Lanjut,A,TI-PLut-A
+Teknologi Informasi,COM60024,Pemrograman Lanjut,B,TI-PLut-B
+Teknologi Informasi,COM60024,Pemrograman Lanjut,C,TI-PLut-C
+Teknologi Informasi,COM60024,Pemrograman Lanjut,D,TI-PLut-D
+Teknologi Informasi,COM60024,Pemrograman Lanjut,E,TI-PLut-E
+Teknologi Informasi,CSD60708,Penambangan Data,A,TI-PDta-A
+Teknologi Informasi,CSD60708,Penambangan Data,B,TI-PDta-B
+Teknologi Informasi,UBU60005,Pengabdian Kepada Masyarakat (PKM),A,TI-PKMPM)-A
+Teknologi Informasi,CIT62012,Pengembangan Aplikasi Mobile,E,TI-PAMle-E
+Teknologi Informasi,CIT62012,Pengembangan Aplikasi Mobile,D,TI-PAMle-D
+Teknologi Informasi,CIT62012,Pengembangan Aplikasi Mobile,C,TI-PAMle-C
+Teknologi Informasi,CIT62012,Pengembangan Aplikasi Mobile,B,TI-PAMle-B
+Teknologi Informasi,CIT62012,Pengembangan Aplikasi Mobile,A,TI-PAMle-A
+Teknologi Informasi,CIT60052,Pengembangan Aplikasi Mobile Terapan,A,TI-PAMTan-A
+Teknologi Informasi,CIT60039,Pengembangan Aplikasi Web Lanjut,A,TI-PAWLut-A
+Teknologi Informasi,CIT60039,Pengembangan Aplikasi Web Lanjut,B,TI-PAWLut-B
+Teknologi Informasi,CIT60053,Pengembangan Gim,A,TI-PGim-A
+Teknologi Informasi,CSD60711,Perancangan Pengalaman Pengguna,B,TI-PPPna-B
+Teknologi Informasi,CSD60711,Perancangan Pengalaman Pengguna,A,TI-PPPna-A
+Teknologi Informasi,CSD60711,Perancangan Pengalaman Pengguna,C,TI-PPPna-C
+Teknologi Informasi,UBU60002,Praktik Kerja Lapang (PKL),A,TI-PKLPL)-A
+Teknologi Informasi,CSD60712,Probabilitas dan Statistika,D,TI-PdSka-D
+Teknologi Informasi,CSD60712,Probabilitas dan Statistika,A,TI-PdSka-A
+Teknologi Informasi,CSD60712,Probabilitas dan Statistika,B,TI-PdSka-B
+Teknologi Informasi,CSD60712,Probabilitas dan Statistika,C,TI-PdSka-C
+Teknologi Informasi,CSD60712,Probabilitas dan Statistika,E,TI-PdSka-E
+Teknologi Informasi,CIT60054,Realitas Terkembang,A,TI-RTng-A
+Teknologi Informasi,CSD60710,Sistem Informasi Geografis,A,TI-SIGis-A
+Teknologi Informasi,CIT62010,Sistem Operasi,B,TI-SOsi-B
+Teknologi Informasi,CIT62010,Sistem Operasi,A,TI-SOsi-A
+Teknologi Informasi,CIT62010,Sistem Operasi,D,TI-SOsi-D
+Teknologi Informasi,CIT62010,Sistem Operasi,E,TI-SOsi-E
+Teknologi Informasi,CIT62010,Sistem Operasi,C,TI-SOsi-C
+Teknologi Informasi,CIT60047,Tata kelola dan Kebijakan Keamanan Siber,A,TI-TkdKKSer-A
+Teknologi Informasi,CIT60049,Teknologi Basis Data Non Relational,B,TI-TBDNRal-B
+Teknologi Informasi,CIT60049,Teknologi Basis Data Non Relational,A,TI-TBDNRal-A
+Teknologi Informasi,CIT60036,Teknologi Berbasis Cloud,B,TI-TBCud-B
+Teknologi Informasi,CIT60036,Teknologi Berbasis Cloud,A,TI-TBCud-A
+Teknologi Informasi,CIT60042,Teknologi Blockchain dan Platform Keuangan Dijital,A,TI-TBdPKDal-A
+Teknologi Informasi,CIT62017,Teknologi Integrasi Sistem,E,TI-TISem-E
+Teknologi Informasi,CIT62017,Teknologi Integrasi Sistem,D,TI-TISem-D
+Teknologi Informasi,CIT62017,Teknologi Integrasi Sistem,C,TI-TISem-C
+Teknologi Informasi,CIT62017,Teknologi Integrasi Sistem,A,TI-TISem-A
+Teknologi Informasi,CIT62017,Teknologi Integrasi Sistem,B,TI-TISem-B
+Teknologi Informasi,CIT60051,Teknologi Smart City,A,TI-TSCty-A
+Teknologi Informasi,CIT60051,Teknologi Smart City,B,TI-TSCty-B
+Teknologi Informasi,UBU60001,Tugas Akhir/ Skripsi,A,TI-TASsi-A
+Teknik Komputer,CCE62306,Administrasi Sistem Server,D,TK-ASSer-D
+Teknik Komputer,CCE62306,Administrasi Sistem Server,E,TK-ASSer-E
+Teknik Komputer,CCE62306,Administrasi Sistem Server,A,TK-ASSer-A
+Teknik Komputer,CCE62306,Administrasi Sistem Server,B,TK-ASSer-B
+Teknik Komputer,CCE62306,Administrasi Sistem Server,C,TK-ASSer-C
+Teknik Komputer,MPK60005,Agama Budha,N5A,TK-ABha-N5A
+Teknik Komputer,MPK60001,Agama Islam,N1Q,TK-AIam-N1Q
+Teknik Komputer,MPK60001,Agama Islam,N1P,TK-AIam-N1P
+Teknik Komputer,MPK60001,Agama Islam,N1O,TK-AIam-N1O
+Teknik Komputer,MPK60001,Agama Islam,N1N,TK-AIam-N1N
+Teknik Komputer,MPK60001,Agama Islam,N1M,TK-AIam-N1M
+Teknik Komputer,MPK60003,Agama Protestan,N3A,TK-APan-N3A
+Teknik Komputer,COM60004,Algoritma dan Struktur Data,B,TK-AdSDta-B
+Teknik Komputer,COM60004,Algoritma dan Struktur Data,A,TK-AdSDta-A
+Teknik Komputer,COM60004,Algoritma dan Struktur Data,E,TK-AdSDta-E
+Teknik Komputer,COM60004,Algoritma dan Struktur Data,D,TK-AdSDta-D
+Teknik Komputer,COM60004,Algoritma dan Struktur Data,C,TK-AdSDta-C
+Teknik Komputer,COM60011,Arsitektur dan Organisasi Komputer,E,TK-AdOKer-E
+Teknik Komputer,COM60011,Arsitektur dan Organisasi Komputer,D,TK-AdOKer-D
+Teknik Komputer,COM60011,Arsitektur dan Organisasi Komputer,C,TK-AdOKer-C
+Teknik Komputer,COM60011,Arsitektur dan Organisasi Komputer,B,TK-AdOKer-B
+Teknik Komputer,COM60011,Arsitektur dan Organisasi Komputer,A,TK-AdOKer-A
+Teknik Komputer,CCE60308,Biomedical Signal Processing on Embedded System,B,TK-BSPoESem-B
+Teknik Komputer,CCE60308,Biomedical Signal Processing on Embedded System,A,TK-BSPoESem-A
+Teknik Komputer,COM60061,Capstone Project,C,TK-CPct-C
+Teknik Komputer,COM60061,Capstone Project,B,TK-CPct-B
+Teknik Komputer,COM60061,Capstone Project,A,TK-CPct-A
+Teknik Komputer,COM60061,Capstone Project,D,TK-CPct-D
+Teknik Komputer,CCE60302,Cloud Computing and Security,A,TK-CCaSty-A
+Teknik Komputer,CCE60302,Cloud Computing and Security,E,TK-CCaSty-E
+Teknik Komputer,CCE60302,Cloud Computing and Security,C,TK-CCaSty-C
+Teknik Komputer,CCE60302,Cloud Computing and Security,B,TK-CCaSty-B
+Teknik Komputer,CCE60302,Cloud Computing and Security,D,TK-CCaSty-D
+Teknik Komputer,CCE60304,Cyber Physical System,B,TK-CPSem-B
+Teknik Komputer,CCE60304,Cyber Physical System,C,TK-CPSem-C
+Teknik Komputer,CCE60304,Cyber Physical System,A,TK-CPSem-A
+Teknik Komputer,CCE60307,Embedded Artificial Intelligence,D,TK-EAIce-D
+Teknik Komputer,CCE60307,Embedded Artificial Intelligence,C,TK-EAIce-C
+Teknik Komputer,CCE60307,Embedded Artificial Intelligence,A,TK-EAIce-A
+Teknik Komputer,CCE60307,Embedded Artificial Intelligence,B,TK-EAIce-B
+Teknik Komputer,CCE62307,Embedded System,E,TK-ESem-E
+Teknik Komputer,CCE62307,Embedded System,D,TK-ESem-D
+Teknik Komputer,CCE62307,Embedded System,A,TK-ESem-A
+Teknik Komputer,CCE62307,Embedded System,B,TK-ESem-B
+Teknik Komputer,CCE62307,Embedded System,C,TK-ESem-C
+Teknik Komputer,CCE60309,Fault Tolerant System,A,TK-FTSem-A
+Teknik Komputer,CCE60309,Fault Tolerant System,B,TK-FTSem-B
+Teknik Komputer,CCE60309,Fault Tolerant System,C,TK-FTSem-C
+Teknik Komputer,CCE60309,Fault Tolerant System,D,TK-FTSem-D
+Teknik Komputer,CCE60310,Game Technologies,A,TK-GTes-A
+Teknik Komputer,CCE60310,Game Technologies,B,TK-GTes-B
+Teknik Komputer,CCE60310,Game Technologies,C,TK-GTes-C
+Teknik Komputer,COM60025,Kalkulus,E,TK-Kus-E
+Teknik Komputer,COM60025,Kalkulus,A,TK-Kus-A
+Teknik Komputer,COM60025,Kalkulus,B,TK-Kus-B
+Teknik Komputer,COM60025,Kalkulus,C,TK-Kus-C
+Teknik Komputer,COM60025,Kalkulus,D,TK-Kus-D
+Teknik Komputer,UBU60003,Kewirausahaan,D,TK-Kan-D
+Teknik Komputer,UBU60003,Kewirausahaan,C,TK-Kan-C
+Teknik Komputer,UBU60003,Kewirausahaan,E,TK-Kan-E
+Teknik Komputer,UBU60003,Kewirausahaan,A,TK-Kan-A
+Teknik Komputer,UBU60003,Kewirausahaan,B,TK-Kan-B
+Teknik Komputer,MPK60008,Pancasila,N8S,TK-Pla-N8S
+Teknik Komputer,MPK60008,Pancasila,N8W,TK-Pla-N8W
+Teknik Komputer,MPK60008,Pancasila,N8T,TK-Pla-N8T
+Teknik Komputer,MPK60008,Pancasila,N8U,TK-Pla-N8U
+Teknik Komputer,MPK60008,Pancasila,N8V,TK-Pla-N8V
+Teknik Komputer,CCE60314,Pattern Recognition,A,TK-PRon-A
+Teknik Komputer,CCE60314,Pattern Recognition,B,TK-PRon-B
+Teknik Komputer,CCE60314,Pattern Recognition,C,TK-PRon-C
+Teknik Komputer,CCE60314,Pattern Recognition,D,TK-PRon-D
+Teknik Komputer,CCE62308,Pemrosesan Sinyal,E,TK-PSal-E
+Teknik Komputer,CCE62308,Pemrosesan Sinyal,B,TK-PSal-B
+Teknik Komputer,CCE62308,Pemrosesan Sinyal,D,TK-PSal-D
+Teknik Komputer,CCE62308,Pemrosesan Sinyal,A,TK-PSal-A
+Teknik Komputer,CCE62308,Pemrosesan Sinyal,C,TK-PSal-C
+Teknik Komputer,UBU60005,Pengabdian Kepada Masyarakat (PKM),A,TK-PKMPM)-A
+Teknik Komputer,CCE62309,Pengantar Jaringan Komputer,B,TK-PJKer-B
+Teknik Komputer,CCE62309,Pengantar Jaringan Komputer,C,TK-PJKer-C
+Teknik Komputer,CCE62309,Pengantar Jaringan Komputer,E,TK-PJKer-E
+Teknik Komputer,CCE62309,Pengantar Jaringan Komputer,D,TK-PJKer-D
+Teknik Komputer,CCE62309,Pengantar Jaringan Komputer,A,TK-PJKer-A
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,E,TK-PPLak-E
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,D,TK-PPLak-D
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,C,TK-PPLak-C
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,B,TK-PPLak-B
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,F,TK-PPLak-F
+Teknik Komputer,CCE62310,Perancangan Perangkat Lunak,A,TK-PPLak-A
+Teknik Komputer,UBU60002,Praktik Kerja Lapang (PKL),A,TK-PKLPL)-A
+Teknik Komputer,CCE62304,Rangkaian Elektronika Lanjut,C,TK-RELut-C
+Teknik Komputer,CCE62304,Rangkaian Elektronika Lanjut,A,TK-RELut-A
+Teknik Komputer,CCE62304,Rangkaian Elektronika Lanjut,B,TK-RELut-B
+Teknik Komputer,CCE62304,Rangkaian Elektronika Lanjut,D,TK-RELut-D
+Teknik Komputer,CCE62304,Rangkaian Elektronika Lanjut,E,TK-RELut-E
+Teknik Komputer,CCE62312,Sistem Automasi,C,TK-SAsi-C
+Teknik Komputer,CCE62312,Sistem Automasi,D,TK-SAsi-D
+Teknik Komputer,CCE62312,Sistem Automasi,E,TK-SAsi-E
+Teknik Komputer,CCE62312,Sistem Automasi,B,TK-SAsi-B
+Teknik Komputer,CCE62312,Sistem Automasi,A,TK-SAsi-A
+Teknik Komputer,CCE62312,Sistem Automasi,F,TK-SAsi-F
+Teknik Komputer,CCE62305,Sistem Basis Data,A,TK-SBDta-A
+Teknik Komputer,CCE62305,Sistem Basis Data,B,TK-SBDta-B
+Teknik Komputer,CCE62305,Sistem Basis Data,C,TK-SBDta-C
+Teknik Komputer,CCE62305,Sistem Basis Data,D,TK-SBDta-D
+Teknik Komputer,CCE62305,Sistem Basis Data,E,TK-SBDta-E
+Teknik Komputer,CCE62311,Sistem Cerdas,D,TK-SCas-D
+Teknik Komputer,CCE62311,Sistem Cerdas,C,TK-SCas-C
+Teknik Komputer,CCE62311,Sistem Cerdas,F,TK-SCas-F
+Teknik Komputer,CCE62311,Sistem Cerdas,E,TK-SCas-E
+Teknik Komputer,CCE62311,Sistem Cerdas,A,TK-SCas-A
+Teknik Komputer,CCE62311,Sistem Cerdas,B,TK-SCas-B
+Teknik Komputer,UBU60001,Tugas Akhir/ Skripsi,A,TK-TASsi-A
+Teknik Informatika,CIF61233,Administrasi sistem server,A,TIF-Asser-A
+Teknik Informatika,CIF62342,Algoritma Evolusi dan Kecerdasan Berkoloni,A,TIF-AEdKBni-A
+Teknik Informatika,CIF62305,Aljabar Linear,A,TIF-ALar-A
+Teknik Informatika,CIF62305,Aljabar Linear,B,TIF-ALar-B
+Teknik Informatika,CIF62305,Aljabar Linear,C,TIF-ALar-C
+Teknik Informatika,CIF62305,Aljabar Linear,D,TIF-ALar-D
+Teknik Informatika,CIF62305,Aljabar Linear,E,TIF-ALar-E
+Teknik Informatika,CIF62305,Aljabar Linear,F,TIF-ALar-F
+Teknik Informatika,CIF62305,Aljabar Linear,G,TIF-ALar-G
+Teknik Informatika,CIF62344,Analitik Big Data,A,TIF-ABDta-A
+Teknik Informatika,CIF62344,Analitik Big Data,B,TIF-ABDta-B
+Teknik Informatika,CIF62344,Analitik Big Data,C,TIF-ABDta-C
+Teknik Informatika,CIF61124,Arsitektur Berbasis Layanan,A,TIF-ABLan-A
+Teknik Informatika,CIF62232,Arsitektur jaringan modern,A,TIF-Ajmrn-A
+Teknik Informatika,CIF62104,Basis Data,A,TIF-BDta-A
+Teknik Informatika,CIF62104,Basis Data,G,TIF-BDta-G
+Teknik Informatika,CIF62104,Basis Data,F,TIF-BDta-F
+Teknik Informatika,CIF62104,Basis Data,E,TIF-BDta-E
+Teknik Informatika,CIF62104,Basis Data,D,TIF-BDta-D
+Teknik Informatika,CIF62104,Basis Data,C,TIF-BDta-C
+Teknik Informatika,CIF62104,Basis Data,B,TIF-BDta-B
+Teknik Informatika,COM60061,Capstone Project,A,TIF-CPct-A
+Teknik Informatika,COM60061,Capstone Project,C,TIF-CPct-C
+Teknik Informatika,COM60061,Capstone Project,B,TIF-CPct-B
+Teknik Informatika,COM60061,Capstone Project,E,TIF-CPct-E
+Teknik Informatika,COM60061,Capstone Project,F,TIF-CPct-F
+Teknik Informatika,COM60061,Capstone Project,D,TIF-CPct-D
+Teknik Informatika,COM60061,Capstone Project,G,TIF-CPct-G
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,F,TIF-DdAAma-F
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,B,TIF-DdAAma-B
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,A,TIF-DdAAma-A
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,D,TIF-DdAAma-D
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,E,TIF-DdAAma-E
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,G,TIF-DdAAma-G
+Teknik Informatika,CIF64112,Desain dan Analisis Algoritma,C,TIF-DdAAma-C
+Teknik Informatika,CIF60038,DevSecOps,A,TIF-Dps-A
+Teknik Informatika,CIF62122,Enterprise Application Integration,B,TIF-EAIon-B
+Teknik Informatika,CIF62122,Enterprise Application Integration,A,TIF-EAIon-A
+Teknik Informatika,COM60052,Etika Profesi,C,TIF-EPsi-C
+Teknik Informatika,COM60052,Etika Profesi,D,TIF-EPsi-D
+Teknik Informatika,COM60052,Etika Profesi,B,TIF-EPsi-B
+Teknik Informatika,COM60052,Etika Profesi,G,TIF-EPsi-G
+Teknik Informatika,COM60052,Etika Profesi,E,TIF-EPsi-E
+Teknik Informatika,COM60052,Etika Profesi,F,TIF-EPsi-F
+Teknik Informatika,COM60052,Etika Profesi,A,TIF-EPsi-A
+Teknik Informatika,CIF62234,Jaringan Sensor Nirkabel,A,TIF-JSNel-A
+Teknik Informatika,CIF64213,Keamanan Informasi,D,TIF-KIsi-D
+Teknik Informatika,CIF64213,Keamanan Informasi,B,TIF-KIsi-B
+Teknik Informatika,CIF64213,Keamanan Informasi,A,TIF-KIsi-A
+Teknik Informatika,CIF64213,Keamanan Informasi,E,TIF-KIsi-E
+Teknik Informatika,CIF64213,Keamanan Informasi,F,TIF-KIsi-F
+Teknik Informatika,CIF64213,Keamanan Informasi,C,TIF-KIsi-C
+Teknik Informatika,CIF62237,Keamanan aplikasi berbasis web,C,TIF-Kabweb-C
+Teknik Informatika,CIF62237,Keamanan aplikasi berbasis web,B,TIF-Kabweb-B
+Teknik Informatika,CIF62237,Keamanan aplikasi berbasis web,A,TIF-Kabweb-A
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,B,TIF-KALut-B
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,C,TIF-KALut-C
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,D,TIF-KALut-D
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,E,TIF-KALut-E
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,F,TIF-KALut-F
+Teknik Informatika,CIF64311,Kecerdasan Artifisial Lanjut,A,TIF-KALut-A
+Teknik Informatika,MPK60006,Kewarganegaraan,N6F,TIF-Kan-N6F
+Teknik Informatika,MPK60006,Kewarganegaraan,N6E,TIF-Kan-N6E
+Teknik Informatika,MPK60006,Kewarganegaraan,N6D,TIF-Kan-N6D
+Teknik Informatika,MPK60006,Kewarganegaraan,N6C,TIF-Kan-N6C
+Teknik Informatika,MPK60006,Kewarganegaraan,N6B,TIF-Kan-N6B
+Teknik Informatika,MPK60006,Kewarganegaraan,N6A,TIF-Kan-N6A
+Teknik Informatika,UBU60003,Kewirausahaan,G,TIF-Kan-G
+Teknik Informatika,UBU60003,Kewirausahaan,A,TIF-Kan-A
+Teknik Informatika,UBU60003,Kewirausahaan,F,TIF-Kan-F
+Teknik Informatika,UBU60003,Kewirausahaan,B,TIF-Kan-B
+Teknik Informatika,UBU60003,Kewirausahaan,E,TIF-Kan-E
+Teknik Informatika,UBU60003,Kewirausahaan,D,TIF-Kan-D
+Teknik Informatika,UBU60003,Kewirausahaan,C,TIF-Kan-C
+Teknik Informatika,CIF60048,Machine Learning Operations (MLOps),A,TIF-MLOMs)-A
+Teknik Informatika,CIF60048,Machine Learning Operations (MLOps),B,TIF-MLOMs)-B
+Teknik Informatika,COM60015,Matematika Diskret,G,TIF-MDet-G
+Teknik Informatika,COM60015,Matematika Diskret,B,TIF-MDet-B
+Teknik Informatika,COM60015,Matematika Diskret,A,TIF-MDet-A
+Teknik Informatika,COM60015,Matematika Diskret,F,TIF-MDet-F
+Teknik Informatika,COM60015,Matematika Diskret,E,TIF-MDet-E
+Teknik Informatika,COM60015,Matematika Diskret,D,TIF-MDet-D
+Teknik Informatika,COM60015,Matematika Diskret,C,TIF-MDet-C
+Teknik Informatika,MPK60008,Pancasila,N8R,TIF-Pla-N8R
+Teknik Informatika,MPK60008,Pancasila,N8Q,TIF-Pla-N8Q
+Teknik Informatika,MPK60008,Pancasila,N8P,TIF-Pla-N8P
+Teknik Informatika,MPK60008,Pancasila,N8O,TIF-Pla-N8O
+Teknik Informatika,MPK60008,Pancasila,N8N,TIF-Pla-N8N
+Teknik Informatika,MPK60008,Pancasila,N8M,TIF-Pla-N8M
+Teknik Informatika,CIF62340,Pemerolehan Informasi dan Penambangan Teks,A,TIF-PIdPTks-A
+Teknik Informatika,COM60024,Pemrograman Lanjut,G,TIF-PLut-G
+Teknik Informatika,COM60024,Pemrograman Lanjut,F,TIF-PLut-F
+Teknik Informatika,COM60024,Pemrograman Lanjut,E,TIF-PLut-E
+Teknik Informatika,COM60024,Pemrograman Lanjut,D,TIF-PLut-D
+Teknik Informatika,COM60024,Pemrograman Lanjut,C,TIF-PLut-C
+Teknik Informatika,COM60024,Pemrograman Lanjut,B,TIF-PLut-B
+Teknik Informatika,COM60024,Pemrograman Lanjut,A,TIF-PLut-A
+Teknik Informatika,CIF62127,Pemrograman Sistem Interaktif,B,TIF-PSIif-B
+Teknik Informatika,CIF62127,Pemrograman Sistem Interaktif,A,TIF-PSIif-A
+Teknik Informatika,UBU60005,Pengabdian Kepada Masyarakat (PKM),A,TIF-PKMPM)-A
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,A,TIF-PAWeb-A
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,F,TIF-PAWeb-F
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,E,TIF-PAWeb-E
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,G,TIF-PAWeb-G
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,D,TIF-PAWeb-D
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,C,TIF-PAWeb-C
+Teknik Informatika,CIF64114,Pengembangan Aplikasi Web,B,TIF-PAWeb-B
+Teknik Informatika,CIF62128,Pengujian Perangkat Lunak,C,TIF-PPLak-C
+Teknik Informatika,CIF62128,Pengujian Perangkat Lunak,A,TIF-PPLak-A
+Teknik Informatika,CIF62128,Pengujian Perangkat Lunak,B,TIF-PPLak-B
+Teknik Informatika,CIF62120,Penjaminan Kualitas Perangkat Lunak,A,TIF-PKPLak-A
+Teknik Informatika,CIF62120,Penjaminan Kualitas Perangkat Lunak,B,TIF-PKPLak-B
+Teknik Informatika,CIF62231,Penyediaan dan Automasi Layanan,A,TIF-PdALan-A
+Teknik Informatika,CIF62231,Penyediaan dan Automasi Layanan,C,TIF-PdALan-C
+Teknik Informatika,CIF62231,Penyediaan dan Automasi Layanan,B,TIF-PdALan-B
+Teknik Informatika,CIF62123,Perancangan Pengalaman Pengguna,A,TIF-PPPna-A
+Teknik Informatika,CIF62123,Perancangan Pengalaman Pengguna,B,TIF-PPPna-B
+Teknik Informatika,UBU60002,Praktik Kerja Lapang (PKL),A,TIF-PKLPL)-A
+Teknik Informatika,CIF62345,Rekayasa Data dan Visualisasi,B,TIF-RDdVsi-B
+Teknik Informatika,CIF62345,Rekayasa Data dan Visualisasi,A,TIF-RDdVsi-A
+Teknik Informatika,CIF62343,Sistem Berbasis Pengetahuan,A,TIF-SBPan-A
+Teknik Informatika,CIF62229,Sistem Komputasi Terdistribusi,B,TIF-SKTsi-B
+Teknik Informatika,CIF62229,Sistem Komputasi Terdistribusi,A,TIF-SKTsi-A
+Teknik Informatika,CIF62203,Sistem Operasi,B,TIF-SOsi-B
+Teknik Informatika,CIF62203,Sistem Operasi,G,TIF-SOsi-G
+Teknik Informatika,CIF62203,Sistem Operasi,F,TIF-SOsi-F
+Teknik Informatika,CIF62203,Sistem Operasi,E,TIF-SOsi-E
+Teknik Informatika,CIF62203,Sistem Operasi,A,TIF-SOsi-A
+Teknik Informatika,CIF62203,Sistem Operasi,D,TIF-SOsi-D
+Teknik Informatika,CIF62203,Sistem Operasi,C,TIF-SOsi-C
+Teknik Informatika,UBU60001,Tugas Akhir/ Skripsi,A,TIF-TASsi-A
+Sistem Informasi,MPK60004,Agama Hindu,N4A,SI-AHdu-N4A
+Sistem Informasi,MPK60001,Agama Islam,N1E,SI-AIam-N1E
+Sistem Informasi,MPK60001,Agama Islam,N1F,SI-AIam-N1F
+Sistem Informasi,MPK60001,Agama Islam,N1G,SI-AIam-N1G
+Sistem Informasi,MPK60001,Agama Islam,N1H,SI-AIam-N1H
+Sistem Informasi,MPK60001,Agama Islam,N1I,SI-AIam-N1I
+Sistem Informasi,MPK60001,Agama Islam,N1J,SI-AIam-N1J
+Sistem Informasi,MPK60002,Agama Katolik,N2A,SI-AKik-N2A
+Sistem Informasi,CSD60716,Analisis Data Penelitian Kualitatif,A,SI-ADPKif-A
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,I,SI-ADPKif-I
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,G,SI-ADPKif-G
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,A,SI-ADPKif-A
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,E,SI-ADPKif-E
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,C,SI-ADPKif-C
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,F,SI-ADPKif-F
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,D,SI-ADPKif-D
+Sistem Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,B,SI-ADPKif-B
+Sistem Informasi,UBU60004,Bahasa Inggris,B,SI-BIis-B
+Sistem Informasi,UBU60004,Bahasa Inggris,A,SI-BIis-A
+Sistem Informasi,UBU60004,Bahasa Inggris,C,SI-BIis-C
+Sistem Informasi,UBU60004,Bahasa Inggris,D,SI-BIis-D
+Sistem Informasi,UBU60004,Bahasa Inggris,E,SI-BIis-E
+Sistem Informasi,UBU60004,Bahasa Inggris,F,SI-BIis-F
+Sistem Informasi,UBU60004,Bahasa Inggris,I,SI-BIis-I
+Sistem Informasi,CSD60707,Big Data dan Analitik,D,SI-BDdAik-D
+Sistem Informasi,CSD60707,Big Data dan Analitik,C,SI-BDdAik-C
+Sistem Informasi,CSD60707,Big Data dan Analitik,A,SI-BDdAik-A
+Sistem Informasi,CSD60707,Big Data dan Analitik,B,SI-BDdAik-B
+Sistem Informasi,COM60061,Capstone Project,C,SI-CPct-C
+Sistem Informasi,COM60061,Capstone Project,D,SI-CPct-D
+Sistem Informasi,COM60061,Capstone Project,I,SI-CPct-I
+Sistem Informasi,COM60061,Capstone Project,E,SI-CPct-E
+Sistem Informasi,COM60061,Capstone Project,F,SI-CPct-F
+Sistem Informasi,COM60061,Capstone Project,B,SI-CPct-B
+Sistem Informasi,COM60061,Capstone Project,A,SI-CPct-A
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,D,SI-DAMPna-D
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,C,SI-DAMPna-C
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,E,SI-DAMPna-E
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,F,SI-DAMPna-F
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,B,SI-DAMPna-B
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,A,SI-DAMPna-A
+Sistem Informasi,CIS62102,Desain Antar Muka Pengguna,I,SI-DAMPna-I
+Sistem Informasi,CIS62108,Enterprise Architecture I,E,SI-EAI I-E
+Sistem Informasi,CIS62108,Enterprise Architecture I,C,SI-EAI I-C
+Sistem Informasi,CIS62108,Enterprise Architecture I,D,SI-EAI I-D
+Sistem Informasi,CIS62108,Enterprise Architecture I,G,SI-EAI I-G
+Sistem Informasi,CIS62108,Enterprise Architecture I,A,SI-EAI I-A
+Sistem Informasi,CIS62108,Enterprise Architecture I,F,SI-EAI I-F
+Sistem Informasi,CIS62108,Enterprise Architecture I,B,SI-EAI I-B
+Sistem Informasi,CIS62108,Enterprise Architecture I,I,SI-EAI I-I
+Sistem Informasi,CIS62126,Evaluasi Pengalaman dan Antarmuka Pengguna,I,SI-EPdAPna-I
+Sistem Informasi,CIS62126,Evaluasi Pengalaman dan Antarmuka Pengguna,D,SI-EPdAPna-D
+Sistem Informasi,CIS62126,Evaluasi Pengalaman dan Antarmuka Pengguna,C,SI-EPdAPna-C
+Sistem Informasi,CIS62126,Evaluasi Pengalaman dan Antarmuka Pengguna,B,SI-EPdAPna-B
+Sistem Informasi,CIS62126,Evaluasi Pengalaman dan Antarmuka Pengguna,A,SI-EPdAPna-A
+Sistem Informasi,CIS62125,GeoInformasi Lanjut,A,SI-GLut-A
+Sistem Informasi,CIS60107,Gudang Data,A,SI-GDta-A
+Sistem Informasi,CIS60107,Gudang Data,B,SI-GDta-B
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,E,SI-JdKAan-E
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,D,SI-JdKAan-D
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,I,SI-JdKAan-I
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,F,SI-JdKAan-F
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,A,SI-JdKAan-A
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,B,SI-JdKAan-B
+Sistem Informasi,CIS62103,Jaringan dan Komputasi Awan,C,SI-JdKAan-C
+Sistem Informasi,CIS61128,Keamanan Jaringan dan Siber,I,SI-KJdSer-I
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,C,SI-KBdAik-C
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,G,SI-KBdAik-G
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,A,SI-KBdAik-A
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,I,SI-KBdAik-I
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,F,SI-KBdAik-F
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,B,SI-KBdAik-B
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,E,SI-KBdAik-E
+Sistem Informasi,CIS62112,Kecerdasan Bisnis dan Analitik,D,SI-KBdAik-D
+Sistem Informasi,UBU60003,Kewirausahaan,A,SI-Kan-A
+Sistem Informasi,UBU60003,Kewirausahaan,E,SI-Kan-E
+Sistem Informasi,UBU60003,Kewirausahaan,D,SI-Kan-D
+Sistem Informasi,UBU60003,Kewirausahaan,G,SI-Kan-G
+Sistem Informasi,UBU60003,Kewirausahaan,C,SI-Kan-C
+Sistem Informasi,UBU60003,Kewirausahaan,F,SI-Kan-F
+Sistem Informasi,UBU60003,Kewirausahaan,B,SI-Kan-B
+Sistem Informasi,CIS62115,Manajemen Investasi Teknologi Informasi,B,SI-MITIsi-B
+Sistem Informasi,CIS62115,Manajemen Investasi Teknologi Informasi,A,SI-MITIsi-A
+Sistem Informasi,CSD60701,Manajemen Layanan Teknologi Informasi,E,SI-MLTIsi-E
+Sistem Informasi,CSD60701,Manajemen Layanan Teknologi Informasi,F,SI-MLTIsi-F
+Sistem Informasi,CSD60701,Manajemen Layanan Teknologi Informasi,C,SI-MLTIsi-C
+Sistem Informasi,CSD60701,Manajemen Layanan Teknologi Informasi,D,SI-MLTIsi-D
+Sistem Informasi,CIS62117,Manajemen Rantai Suplai,A,SI-MRSai-A
+Sistem Informasi,CIS62117,Manajemen Rantai Suplai,B,SI-MRSai-B
+Sistem Informasi,CIS62117,Manajemen Rantai Suplai,D,SI-MRSai-D
+Sistem Informasi,CIS62117,Manajemen Rantai Suplai,C,SI-MRSai-C
+Sistem Informasi,MPK60008,Pancasila,N8E,SI-Pla-N8E
+Sistem Informasi,MPK60008,Pancasila,N8F,SI-Pla-N8F
+Sistem Informasi,MPK60008,Pancasila,N8G,SI-Pla-N8G
+Sistem Informasi,MPK60008,Pancasila,N8H,SI-Pla-N8H
+Sistem Informasi,MPK60008,Pancasila,N8I,SI-Pla-N8I
+Sistem Informasi,MPK60008,Pancasila,N8J,SI-Pla-N8J
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,I,SI-PPBis-I
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,F,SI-PPBis-F
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,E,SI-PPBis-E
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,D,SI-PPBis-D
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,C,SI-PPBis-C
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,B,SI-PPBis-B
+Sistem Informasi,CIS62104,Pemodelan Proses Bisnis,A,SI-PPBis-A
+Sistem Informasi,COM60024,Pemrograman Lanjut,A,SI-PLut-A
+Sistem Informasi,COM60024,Pemrograman Lanjut,F,SI-PLut-F
+Sistem Informasi,COM60024,Pemrograman Lanjut,E,SI-PLut-E
+Sistem Informasi,COM60024,Pemrograman Lanjut,D,SI-PLut-D
+Sistem Informasi,COM60024,Pemrograman Lanjut,B,SI-PLut-B
+Sistem Informasi,COM60024,Pemrograman Lanjut,C,SI-PLut-C
+Sistem Informasi,COM60024,Pemrograman Lanjut,I,SI-PLut-I
+Sistem Informasi,CSD60705,Pemrograman SQL,E,SI-PSQL-E
+Sistem Informasi,CSD60705,Pemrograman SQL,I,SI-PSQL-I
+Sistem Informasi,CSD60705,Pemrograman SQL,F,SI-PSQL-F
+Sistem Informasi,CSD60705,Pemrograman SQL,A,SI-PSQL-A
+Sistem Informasi,CSD60705,Pemrograman SQL,B,SI-PSQL-B
+Sistem Informasi,CSD60705,Pemrograman SQL,C,SI-PSQL-C
+Sistem Informasi,CSD60705,Pemrograman SQL,D,SI-PSQL-D
+Sistem Informasi,CIS62106,Pemrograman Web,E,SI-PWeb-E
+Sistem Informasi,CIS62106,Pemrograman Web,A,SI-PWeb-A
+Sistem Informasi,CIS62106,Pemrograman Web,B,SI-PWeb-B
+Sistem Informasi,CIS62106,Pemrograman Web,F,SI-PWeb-F
+Sistem Informasi,CIS62106,Pemrograman Web,I,SI-PWeb-I
+Sistem Informasi,CIS62106,Pemrograman Web,C,SI-PWeb-C
+Sistem Informasi,CIS62106,Pemrograman Web,D,SI-PWeb-D
+Sistem Informasi,CIS60103,Pemrograman Web Lanjut,I,SI-PWLut-I
+Sistem Informasi,CIS60103,Pemrograman Web Lanjut,A,SI-PWLut-A
+Sistem Informasi,CSD60708,Penambangan Data,A,SI-PDta-A
+Sistem Informasi,CSD60708,Penambangan Data,B,SI-PDta-B
+Sistem Informasi,UBU60005,Pengabdian Kepada Masyarakat (PKM),A,SI-PKMPM)-A
+Sistem Informasi,CIS62105,Pengantar Sains Data,I,SI-PSDta-I
+Sistem Informasi,CIS62105,Pengantar Sains Data,E,SI-PSDta-E
+Sistem Informasi,CIS62105,Pengantar Sains Data,D,SI-PSDta-D
+Sistem Informasi,CIS62105,Pengantar Sains Data,C,SI-PSDta-C
+Sistem Informasi,CIS62105,Pengantar Sains Data,B,SI-PSDta-B
+Sistem Informasi,CIS62105,Pengantar Sains Data,A,SI-PSDta-A
+Sistem Informasi,CIS62105,Pengantar Sains Data,G,SI-PSDta-G
+Sistem Informasi,CIS62105,Pengantar Sains Data,F,SI-PSDta-F
+Sistem Informasi,CIS62114,Pengembangan Aplikasi Mobile Lanjut,A,SI-PAMLut-A
+Sistem Informasi,CIS62114,Pengembangan Aplikasi Mobile Lanjut,I,SI-PAMLut-I
+Sistem Informasi,CIS60102,Pengembangan Aplikasi Multiplatform,A,SI-PAMrm-A
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,A,SI-PPPna-A
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,B,SI-PPPna-B
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,C,SI-PPPna-C
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,D,SI-PPPna-D
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,E,SI-PPPna-E
+Sistem Informasi,CSD60711,Perancangan Pengalaman Pengguna,F,SI-PPPna-F
+Sistem Informasi,CSD60712,Perancangan Pengalaman Pengguna,G,SI-PPPna-G
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,I,SI-PSSIsi-I
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,E,SI-PSSIsi-E
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,D,SI-PSSIsi-D
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,C,SI-PSSIsi-C
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,B,SI-PSSIsi-B
+Sistem Informasi,CIS62110,Perencanaan Strategis Sistem Informasi,A,SI-PSSIsi-A
+Sistem Informasi,CIS60101,Perkembangan dan Tren Teknologi Digital,A,SI-PdTTDal-A
+Sistem Informasi,CIS60101,Perkembangan dan Tren Teknologi Digital,B,SI-PdTTDal-B
+Sistem Informasi,CIS60101,Perkembangan dan Tren Teknologi Digital,I,SI-PdTTDal-I
+Sistem Informasi,CIS62113,Pola-Pola Perancangan,A,SI-PPan-A
+Sistem Informasi,UBU60002,Praktik Kerja Lapang (PKL),A,SI-PKLPL)-A
+Sistem Informasi,CIS61118,Rekayasa Kebutuhan Sistem Informasi,A,SI-RKSIsi-A
+Sistem Informasi,CIS60106,Sistem Informasi Berkelanjutan,A,SI-SIBan-A
+Sistem Informasi,CSD60702,Sistem Pendukung Keputusan,D,SI-SPKan-D
+Sistem Informasi,CSD60702,Sistem Pendukung Keputusan,A,SI-SPKan-A
+Sistem Informasi,CSD60702,Sistem Pendukung Keputusan,B,SI-SPKan-B
+Sistem Informasi,CSD60702,Sistem Pendukung Keputusan,C,SI-SPKan-C
+Sistem Informasi,CIS60105,Strategi Transformasi Digital,A,SI-STDal-A
+Sistem Informasi,CIS60105,Strategi Transformasi Digital,I,SI-STDal-I
+Sistem Informasi,CSD60717,Teknologi Blockchain dan Platform Keuangan Dijital,I,SI-TBdPKDal-I
+Sistem Informasi,CSD60717,Teknologi Blockchain dan Platform Keuangan Dijital,A,SI-TBdPKDal-A
+Sistem Informasi,CSD60717,Teknologi Blockchain dan Platform Keuangan Dijital,B,SI-TBdPKDal-B
+Sistem Informasi,CIS60104,Transformasi Pemerintah,A,SI-TPah-A
+Sistem Informasi,UBU60001,Tugas Akhir/ Skripsi,A,SI-TASsi-A
+Pendidikan Teknologi Informasi,MPK60001,Agama Islam,N1A,PTI-AIam-N1A
+Pendidikan Teknologi Informasi,MPK60001,Agama Islam,N1B,PTI-AIam-N1B
+Pendidikan Teknologi Informasi,MPK60001,Agama Islam,N1C,PTI-AIam-N1C
+Pendidikan Teknologi Informasi,MPK60001,Agama Islam,N1D,PTI-AIam-N1D
+Pendidikan Teknologi Informasi,CSD60716,Analisis Data Penelitian Kualitatif,A,PTI-ADPKif-A
+Pendidikan Teknologi Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,B,PTI-ADPKif-B
+Pendidikan Teknologi Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,A,PTI-ADPKif-A
+Pendidikan Teknologi Informasi,CSD60715,Analisis Data Penelitian Kuantitatif,C,PTI-ADPKif-C
+Pendidikan Teknologi Informasi,COM60061,Capstone Project,A,PTI-CPct-A
+Pendidikan Teknologi Informasi,COM60052,Etika Profesi,A,PTI-EPsi-A
+Pendidikan Teknologi Informasi,COM60052,Etika Profesi,B,PTI-EPsi-B
+Pendidikan Teknologi Informasi,COM60052,Etika Profesi,C,PTI-EPsi-C
+Pendidikan Teknologi Informasi,CIE62401,Inovasi Digital Kompetitif,A,PTI-IDKif-A
+Pendidikan Teknologi Informasi,CIE62401,Inovasi Digital Kompetitif,B,PTI-IDKif-B
+Pendidikan Teknologi Informasi,CIE62401,Inovasi Digital Kompetitif,C,PTI-IDKif-C
+Pendidikan Teknologi Informasi,CSD60714,Jaminan Kualitas Perangkat Lunak,A,PTI-JKPLak-A
+Pendidikan Teknologi Informasi,CSD60709,Keamanan Siber,A,PTI-KSer-A
+Pendidikan Teknologi Informasi,CSD60709,Keamanan Siber,C,PTI-KSer-C
+Pendidikan Teknologi Informasi,CSD60709,Keamanan Siber,B,PTI-KSer-B
+Pendidikan Teknologi Informasi,CIE62303,Kecerdasan Artifisial,B,PTI-KAal-B
+Pendidikan Teknologi Informasi,CIE62303,Kecerdasan Artifisial,C,PTI-KAal-C
+Pendidikan Teknologi Informasi,CIE62303,Kecerdasan Artifisial,A,PTI-KAal-A
+Pendidikan Teknologi Informasi,CIE62107,Lingkungan Pembelajaran Digital,C,PTI-LPDal-C
+Pendidikan Teknologi Informasi,CIE62107,Lingkungan Pembelajaran Digital,B,PTI-LPDal-B
+Pendidikan Teknologi Informasi,CIE62107,Lingkungan Pembelajaran Digital,A,PTI-LPDal-A
+Pendidikan Teknologi Informasi,CIE61120,Literasi Digital,C,PTI-LDal-C
+Pendidikan Teknologi Informasi,CIE61120,Literasi Digital,B,PTI-LDal-B
+Pendidikan Teknologi Informasi,CIE61120,Literasi Digital,A,PTI-LDal-A
+Pendidikan Teknologi Informasi,CIE61119,Multimodal Storytelling,A,PTI-MSng-A
+Pendidikan Teknologi Informasi,MPK60008,Pancasila,N8A,PTI-Pla-N8A
+Pendidikan Teknologi Informasi,MPK60008,Pancasila,N8B,PTI-Pla-N8B
+Pendidikan Teknologi Informasi,MPK60008,Pancasila,N8C,PTI-Pla-N8C
+Pendidikan Teknologi Informasi,MPK60008,Pancasila,N8D,PTI-Pla-N8D
+Pendidikan Teknologi Informasi,CIE62204,Paradigma Sistem,A,PTI-PSem-A
+Pendidikan Teknologi Informasi,CIE62204,Paradigma Sistem,B,PTI-PSem-B
+Pendidikan Teknologi Informasi,CIE62204,Paradigma Sistem,C,PTI-PSem-C
+Pendidikan Teknologi Informasi,CIE62105,Pembelajaran Berdiferensiasi,B,PTI-PBsi-B
+Pendidikan Teknologi Informasi,CIE62105,Pembelajaran Berdiferensiasi,C,PTI-PBsi-C
+Pendidikan Teknologi Informasi,CIE62105,Pembelajaran Berdiferensiasi,A,PTI-PBsi-A
+Pendidikan Teknologi Informasi,CIE62306,Pembelajaran Inklusif,A,PTI-PIif-A
+Pendidikan Teknologi Informasi,CIE62305,Pembelajaran Sosial Emosional,A,PTI-PSEal-A
+Pendidikan Teknologi Informasi,CIE62203,Pemrograman Berbasis Objek,C,PTI-PBOek-C
+Pendidikan Teknologi Informasi,CIE62203,Pemrograman Berbasis Objek,B,PTI-PBOek-B
+Pendidikan Teknologi Informasi,CIE62203,Pemrograman Berbasis Objek,A,PTI-PBOek-A
+Pendidikan Teknologi Informasi,UBU60005,Pengabdian Kepada Masyarakat (PKM),A,PTI-PKMPM)-A
+Pendidikan Teknologi Informasi,CIE62104,Pengembangan Kurikulum,A,PTI-PKum-A
+Pendidikan Teknologi Informasi,CIE62104,Pengembangan Kurikulum,B,PTI-PKum-B
+Pendidikan Teknologi Informasi,CIE62104,Pengembangan Kurikulum,C,PTI-PKum-C
+Pendidikan Teknologi Informasi,CIE62209,Pengembangan dan Manajemen Perangkat Lunak,C,PTI-PdMPLak-C
+Pendidikan Teknologi Informasi,CIE62209,Pengembangan dan Manajemen Perangkat Lunak,B,PTI-PdMPLak-B
+Pendidikan Teknologi Informasi,CIE62209,Pengembangan dan Manajemen Perangkat Lunak,A,PTI-PdMPLak-A
+Pendidikan Teknologi Informasi,CIE61111,Pengenalan Lapangan Persekolahan 1,A,PTI-PLP 1-A
+Pendidikan Teknologi Informasi,CIE61112,Pengenalan Lapangan Persekolahan 2,A,PTI-PLP 2-A
+Pendidikan Teknologi Informasi,CIE62201,Perancangan Antarmuka Pengguna,C,PTI-PAPna-C
+Pendidikan Teknologi Informasi,CIE62201,Perancangan Antarmuka Pengguna,B,PTI-PAPna-B
+Pendidikan Teknologi Informasi,CIE62201,Perancangan Antarmuka Pengguna,A,PTI-PAPna-A
+Pendidikan Teknologi Informasi,CSD60711,Perancangan Pengalaman Pengguna,A,PTI-PPPna-A
+Pendidikan Teknologi Informasi,UBU60002,Praktik Kerja Lapang (PKL),A,PTI-PKLPL)-A
+Pendidikan Teknologi Informasi,CSD60712,Probabilitas dan Statistika,C,PTI-PdSka-C
+Pendidikan Teknologi Informasi,CSD60712,Probabilitas dan Statistika,B,PTI-PdSka-B
+Pendidikan Teknologi Informasi,CSD60712,Probabilitas dan Statistika,A,PTI-PdSka-A
+Pendidikan Teknologi Informasi,CIE61212,Sistem Belajar Mesin,B,PTI-SBMin-B
+Pendidikan Teknologi Informasi,CIE61212,Sistem Belajar Mesin,A,PTI-SBMin-A
+Pendidikan Teknologi Informasi,CIE62307,"Sistem Pembelajaran Berbasis Multimedia, Gim, dan Peranti Bergerak",A,PTI-SPBMGdPBak-A
+Pendidikan Teknologi Informasi,CIE62307,"Sistem Pembelajaran Berbasis Multimedia, Gim, dan Peranti Bergerak",B,PTI-SPBMGdPBak-B
+Pendidikan Teknologi Informasi,CIE62118,Sistem Pembelajaran Bergamifikasi dan Terpersonalisasi,A,PTI-SPBdTsi-A
+Pendidikan Teknologi Informasi,CIE62308,Sistem Pembelajaran Jarak Jauh,A,PTI-SPJJuh-A
+Pendidikan Teknologi Informasi,CSD60702,Sistem Pendukung Keputusan,A,PTI-SPKan-A
+Pendidikan Teknologi Informasi,CIE62116,Teknologi Komputasi Awan,C,PTI-TKAan-C
+Pendidikan Teknologi Informasi,CIE62116,Teknologi Komputasi Awan,B,PTI-TKAan-B
+Pendidikan Teknologi Informasi,CIE62116,Teknologi Komputasi Awan,A,PTI-TKAan-A
+Pendidikan Teknologi Informasi,CIE62117,Teknologi Peranti Internet,A,PTI-TPIet-A
+Pendidikan Teknologi Informasi,CIE62202,Teknologi Platform,B,PTI-TPrm-B
+Pendidikan Teknologi Informasi,CIE62202,Teknologi Platform,C,PTI-TPrm-C
+Pendidikan Teknologi Informasi,CIE62202,Teknologi Platform,A,PTI-TPrm-A
+Pendidikan Teknologi Informasi,CIE62106,Teori dan Sains Belajar,C,PTI-TdSBar-C
+Pendidikan Teknologi Informasi,CIE62106,Teori dan Sains Belajar,A,PTI-TdSBar-A
+Pendidikan Teknologi Informasi,CIE62106,Teori dan Sains Belajar,B,PTI-TdSBar-B
+Pendidikan Teknologi Informasi,UBU60001,Tugas Akhir/ Skripsi,A,PTI-TASsi-A
+Magister Sistem Informasi,MIS80223,Analitik dan Visualisasi Data,A,MSI-AdVDta-A
+Magister Sistem Informasi,MIS80211,Aplikasi Mobile Kontemporer,A,MSI-AMKer-A
+Magister Sistem Informasi,MIS80211,Aplikasi Mobile Kontemporer,B,MSI-AMKer-B
+Magister Sistem Informasi,MIS80213,Desain Interaksi dan Pengalaman Pengguna,B,MSI-DIdPPna-B
+Magister Sistem Informasi,MIS80213,Desain Interaksi dan Pengalaman Pengguna,A,MSI-DIdPPna-A
+Magister Sistem Informasi,MIS81101,Desain dan Pengembangan Sistem Informasi Lanjut,B,MSI-DdPSILut-B
+Magister Sistem Informasi,MIS81101,Desain dan Pengembangan Sistem Informasi Lanjut,A,MSI-DdPSILut-A
+Magister Sistem Informasi,MIS80224,Kecerdasan Buatan dan Intelegensia Bisnis,B,MSI-KBdIBis-B
+Magister Sistem Informasi,MIS81102,Manajemen Data dan Jaminan Informasi,B,MSI-MDdJIsi-B
+Magister Sistem Informasi,MIS81102,Manajemen Data dan Jaminan Informasi,A,MSI-MDdJIsi-A
+Magister Sistem Informasi,MIS82201,Manajemen Teknologi dan Etika Bisnis,B,MSI-MTdEBis-B
+Magister Sistem Informasi,MIS82201,Manajemen Teknologi dan Etika Bisnis,A,MSI-MTdEBis-A
+Magister Sistem Informasi,MIS81103,Manajemen dan Operasional Sistem Informasi,B,MSI-MdOSIsi-B
+Magister Sistem Informasi,MIS81103,Manajemen dan Operasional Sistem Informasi,A,MSI-MdOSIsi-A
+Magister Sistem Informasi,UBU80011,Metodologi Penelitian dan Penulisan Karya Ilmiah,B,MSI-MPdPKIah-B
+Magister Sistem Informasi,UBU80011,Metodologi Penelitian dan Penulisan Karya Ilmiah,A,MSI-MPdPKIah-A
+Magister Sistem Informasi,MIS81104,Sains Data dan Statistika Terapan,B,MSI-SDdSTan-B
+Magister Sistem Informasi,MIS81104,Sains Data dan Statistika Terapan,A,MSI-SDdSTan-A
+Magister Sistem Informasi,MIS80221,Sistem Basis Data Enterprise dan Big Data,B,MSI-SBDEdBDta-B
+Magister Sistem Informasi,MIS80212,Sistem dan Aplikasi Multimedia,B,MSI-SdAMia-B
+Magister Sistem Informasi,UBU80005,TA Magister (Proposal),B,MSI-TMPl)-B
+Magister Ilmu Komputer,CCS80201,Analisis & Pemrosesan Data Multimodal,D,MIK-APDMal-D
+Magister Ilmu Komputer,CCS80201,Analisis & Pemrosesan Data Multimodal,B,MIK-APDMal-B
+Magister Ilmu Komputer,CCS80201,Analisis & Pemrosesan Data Multimodal,C,MIK-APDMal-C
+Magister Ilmu Komputer,CCS80201,Analisis & Pemrosesan Data Multimodal,A,MIK-APDMal-A
+Magister Ilmu Komputer,CCS81103,Kecerdasan Artifisial,A,MIK-KAal-A
+Magister Ilmu Komputer,CCS81103,Kecerdasan Artifisial,C,MIK-KAal-C
+Magister Ilmu Komputer,CCS80304,Komputasi Saintifik Berkinerja Tinggi,A,MIK-KSBTgi-A
+Magister Ilmu Komputer,CCS80221,Manajemen Teknologi,A,MIK-MTgi-A
+Magister Ilmu Komputer,CCS80221,Manajemen Teknologi,B,MIK-MTgi-B
+Magister Ilmu Komputer,CCS80221,Manajemen Teknologi,C,MIK-MTgi-C
+Magister Ilmu Komputer,CCS80221,Manajemen Teknologi,D,MIK-MTgi-D
+Magister Ilmu Komputer,UBU80001,Metode Penelitian dan Penulisan Karya Tulis,A,MIK-MPdPKTis-A
+Magister Ilmu Komputer,UBU80001,Metode Penelitian dan Penulisan Karya Tulis,C,MIK-MPdPKTis-C
+Magister Ilmu Komputer,UBU80011,Metodologi Penelitian dan Penulisan Karya Ilmiah,A,MIK-MPdPKIah-A
+Magister Ilmu Komputer,CCS80200,Pembelajaran Mesin,A,MIK-PMin-A
+Magister Ilmu Komputer,CCS80200,Pembelajaran Mesin,B,MIK-PMin-B
+Magister Ilmu Komputer,CCS80200,Pembelajaran Mesin,D,MIK-PMin-D
+Magister Ilmu Komputer,CCS80200,Pembelajaran Mesin,C,MIK-PMin-C
+Magister Ilmu Komputer,CCS80301,Pemrosesan Bahasa Alami Tingkat Lanjut,A,MIK-PBATLut-A
+Magister Ilmu Komputer,CCS81100,Pengantar Sistem Pintar,C,MIK-PSPar-C
+Magister Ilmu Komputer,CCS81100,Pengantar Sistem Pintar,A,MIK-PSPar-A
+Magister Ilmu Komputer,CCS82104,Pengembangan Sistem Pintar,A,MIK-PSPar-A
+Magister Ilmu Komputer,CCS82104,Pengembangan Sistem Pintar,B,MIK-PSPar-B
+Magister Ilmu Komputer,CCS82104,Pengembangan Sistem Pintar,D,MIK-PSPar-D
+Magister Ilmu Komputer,CCS82104,Pengembangan Sistem Pintar,C,MIK-PSPar-C
+Magister Ilmu Komputer,CCS81102,Rekayasa Perangkat Lunak,A,MIK-RPLak-A
+Magister Ilmu Komputer,CCS81102,Rekayasa Perangkat Lunak,C,MIK-RPLak-C
+Magister Ilmu Komputer,CCS80203,Sistem Siber-Fisik,C,MIK-SSik-C
+Magister Ilmu Komputer,CCS80203,Sistem Siber-Fisik,B,MIK-SSik-B
+Magister Ilmu Komputer,CCS80203,Sistem Siber-Fisik,A,MIK-SSik-A
+Magister Ilmu Komputer,CCS81101,Sistem Terdistribusi,C,MIK-STsi-C
+Magister Ilmu Komputer,CCS81101,Sistem Terdistribusi,A,MIK-STsi-A
+Magister Ilmu Komputer,UBU80006,TA Magister (Pelaksanaan),A,MIK-TMPn)-A
+Magister Ilmu Komputer,UBU80005,TA Magister (Proposal),A,MIK-TMPl)-A
+Magister Ilmu Komputer,UBU80008,TA Magister (Publikasi),A,MIK-TMPi)-A
+Magister Ilmu Komputer,CCS80312,Teknik dan Algoritma Optimasi,A,MIK-TdAOsi-A
+Magister Ilmu Komputer,CCS80312,Teknik dan Algoritma Optimasi,B,MIK-TdAOsi-B
+Magister Ilmu Komputer,CCS80312,Teknik dan Algoritma Optimasi,D,MIK-TdAOsi-D
+Magister Ilmu Komputer,CCS80300,Visi Komputer Tingkat Lanjut,D,MIK-VKTLut-D
+Magister Ilmu Komputer,CCS80300,Visi Komputer Tingkat Lanjut,A,MIK-VKTLut-A
+Doktor Ilmu Komputer,DCS90001,Etika Riset,B,DIK-ERet-B
+Doktor Ilmu Komputer,DCS90001,Etika Riset,A,DIK-ERet-A
+Doktor Ilmu Komputer,DCS90002,Filsafat Ilmu,A,DIK-FImu-A
+Doktor Ilmu Komputer,DCS90002,Filsafat Ilmu,B,DIK-FImu-B
+Doktor Ilmu Komputer,UBU900021,Metode Penelitian dan Penulisan Karya Ilmiah,A,DIK-MPdPKIah-A
+Doktor Ilmu Komputer,UBU900021,Metode Penelitian dan Penulisan Karya Ilmiah,B,DIK-MPdPKIah-B
+Doktor Ilmu Komputer,DCS90004,Topik Analisis Data,A,DIK-TADta-A
+Doktor Ilmu Komputer,DCS90004,Topik Analisis Data,B,DIK-TADta-B
+Doktor Ilmu Komputer,DCS90009,Topik Khusus Bidang Bioinformatika/Biokomputasi,A,DIK-TKBBsi-A
+Doktor Ilmu Komputer,DCS90012,Topik Khusus Bidang Citra Digital dan Visi Komputer,A,DIK-TKBCDdVKer-A
+Doktor Ilmu Komputer,DCS90012,Topik Khusus Bidang Citra Digital dan Visi Komputer,B,DIK-TKBCDdVKer-B
+Doktor Ilmu Komputer,DCS90013,Topik Khusus Bidang Grafik dan Imersi,A,DIK-TKBGdIsi-A
+Doktor Ilmu Komputer,DCS90011,Topik Khusus Bidang Metode Optimasi,A,DIK-TKBMOsi-A
+Doktor Ilmu Komputer,DCS90011,Topik Khusus Bidang Metode Optimasi,B,DIK-TKBMOsi-B
+Doktor Ilmu Komputer,DCS90010,Topik Khusus Bidang Pemrosesan Bahasa Alami,B,DIK-TKBPBAmi-B
+Doktor Ilmu Komputer,DCS90014,Topik Khusus Bidang Rekayasa Perangkat Lunak,A,DIK-TKBRPLak-A
+Doktor Ilmu Komputer,DCS90007,Topik Khusus Bidang Sistem Tertanam Cerdas,B,DIK-TKBSTCas-B
+Doktor Ilmu Komputer,DCS90006,Topik Metode Formal,A,DIK-TMFal-A
+Doktor Ilmu Komputer,DCS90006,Topik Metode Formal,B,DIK-TMFal-B
+Doktor Ilmu Komputer,DCS90003,Topik Pembelajaran Mesin,A,DIK-TPMin-A
+Doktor Ilmu Komputer,DCS90003,Topik Pembelajaran Mesin,B,DIK-TPMin-B
+Doktor Ilmu Komputer,DCS90005,Topik Pemodelan dan Simulasi,A,DIK-TPdSsi-A
+Doktor Ilmu Komputer,DCS90005,Topik Pemodelan dan Simulasi,B,DIK-TPdSsi-B

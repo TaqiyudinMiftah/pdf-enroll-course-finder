@@ -2,33 +2,8 @@ import { Course } from './types';
 import { createLogger } from './logger';
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '';
-const PRIMARY_MODEL = process.env.OPENROUTER_PRIMARY_MODEL || 'nvidia/nemotron-ultra-253b-v1';
-const FALLBACK_MODEL = process.env.OPENROUTER_FALLBACK_MODEL || 'nvidia/llama-3.2-nemotron-nano-vl-8b-v1';
+const OCR_MODEL = process.env.OPENROUTER_OCR_MODEL || 'baidu/qianfan-ocr-fast:free';
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-
-const SYSTEM_PROMPT = `Kamu adalah sistem OCR khusus untuk membaca jadwal mata kuliah mahasiswa.
-Tugasmu adalah mengekstrak informasi mata kuliah dari gambar yang diberikan.
-
-OUTPUT RULES:
-- Kembalikan HANYA JSON array yang valid, tanpa penjelasan, tanpa markdown code block
-- Jika tidak ada mata kuliah yang terbaca, kembalikan array kosong: []
-- Jangan menambahkan field selain yang diminta
-
-OUTPUT FORMAT:
-[
-  {
-    "nama_mk": "<nama mata kuliah persis seperti di gambar>",
-    "kelas": "<huruf atau kode kelas, contoh: A, B, N1G>",
-    "prodi": "<program studi jika terlihat, atau null>"
-  }
-]
-
-ATURAN EKSTRAKSI:
-- nama_mk: tulis persis seperti di gambar, jangan disingkat atau diparafrase
-- kelas: hanya kode kelasnya saja (A, B, C, N1G, dll), bukan "Kelas A"
-- prodi: isi jika terlihat di gambar, jika tidak terlihat isi null
-- Jika ada kode MK (misal CSD60706), tambahkan field "kode_mk" berisi kode tersebut
-- Abaikan informasi selain nama MK, kelas, dan prodi (SKS, dosen, ruang, jadwal jam)`;
 
 export interface ExtractResult {
   success: boolean;
@@ -37,25 +12,74 @@ export interface ExtractResult {
   fallback_reason?: string;
 }
 
-async function callOpenRouter(
-  imageBase64: string,
-  model: string,
-  prodi: string | undefined,
-  signal: AbortSignal,
-  logger: ReturnType<typeof createLogger>
-): Promise<{ courses: Course[]; rawResponse: string }> {
-  const userContent = prodi
-    ? `Ekstrak semua mata kuliah dari jadwal ini. Program Studi: ${prodi}`
-    : 'Ekstrak semua mata kuliah dari jadwal ini.';
+/**
+ * Parse OCR output langsung dengan regex.
+ * Format OCR dari baidu — 2 varian:
+ *   Varian A: "Senin 08:45:00 - 10:25:00 (CIF64213) Keamanan Informasi C Mahendra Data..."
+ *   Varian B: "Senin 08:45 - 10:25 A CCE61306 Desain dan Analisis Algoritma 2024 ..."
+ */
+function parseOcrDirect(ocrText: string): Course[] {
+  const courses: Course[] = [];
+  const seen = new Set<string>();
 
-  logger.logLlmRequest({
-    model,
-    imageBase64Length: imageBase64.length,
-    systemPromptLength: SYSTEM_PROMPT.length,
-    userPrompt: userContent,
-  });
+  const lines = ocrText.split('\n');
 
-  const response = await fetch(API_URL, {
+  // Pre-process: gabungkan MATA KULIAH multi-kata yang terpisah baris (jarang terjadi)
+  const processedLines = lines.map((l) => l.trim()).filter((l) => l.length > 30);
+
+  for (const line of processedLines) {
+    // Varian A: kode MK dalam kurung, kelas setelah nama
+    // "Senin 08:45:00 - 10:25:00 (CIF64213) Keamanan Informasi C Mahendra..."
+    let match = line.match(
+      /(?:Senin|Selasa|Rabu|Kamis|Jumat|Sabtu|Minggu)\s+\d{2}:\d{2}(?::\d{2})?\s*-\s*\d{2}:\d{2}(?::\d{2})?\s+\(([A-Z]{3}\d{5,8})\)\s+(.+?)\s+([A-Z][A-Z0-9]{0,3})\s+[A-Z][a-z]/
+    );
+
+    if (match) {
+      const [, kode_mk, namaRaw, kelas] = match;
+      const nama_mk = namaRaw.trim();
+
+      if (nama_mk && kode_mk && kelas) {
+        const key = `${nama_mk.toLowerCase()}|${kelas.toLowerCase()}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          courses.push({ nama_mk, kelas, kode_mk, prodi: '' });
+        }
+        continue;
+      }
+    }
+
+    // Varian B: kelas sebelum kode MK (format sebelumnya)
+    // "Senin 08:45 - 10:25 A CCE61306 Desain dan Analisis Algoritma 2024 ..."
+    match = line.match(
+      /(?:Senin|Selasa|Rabu|Kamis|Jumat|Sabtu|Minggu)\s+\d{2}:\d{2}\s*-\s*\d{2}:\d{2}\s+([A-Z0-9]{1,3})\s+([A-Z]{3}\d{5,8})\s+(.+?)\s+\d{4}\b/
+    );
+
+    if (match) {
+      const [, kelas, kode_mk, namaRaw] = match;
+      let nama_mk = namaRaw;
+      // Stop di kata-kata non-matkul
+      const stopWords = ['Gedung', 'Luring', 'Daring', 'Tampilkan', 'Reguler', 'FILKOM', 'F3.', 'F4.', 'S.Kom', 'S.T', 'M.Kom', 'M.Eng', 'M.T', 'Ph.D', 'Pengumuman'];
+      for (const stop of stopWords) {
+        const idx = nama_mk.indexOf(stop);
+        if (idx > 0) nama_mk = nama_mk.substring(0, idx);
+      }
+      nama_mk = nama_mk.replace(/\s{2,}/g, ' ').trim();
+
+      if (nama_mk && kode_mk && kelas && nama_mk.length > 4) {
+        const key = `${nama_mk.toLowerCase()}|${kelas.toLowerCase()}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          courses.push({ nama_mk, kelas, kode_mk, prodi: '' });
+        }
+      }
+    }
+  }
+
+  return courses;
+}
+
+async function chat(model: string, messages: { role: string; content: unknown }[], signal: AbortSignal, maxTokens = 2048): Promise<string> {
+  const res = await fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -63,172 +87,57 @@ async function callOpenRouter(
       'HTTP-Referer': 'https://course-enroll-finder.vercel.app',
       'X-Title': 'Course Enroll Finder',
     },
-    body: JSON.stringify({
-      model: model,
-      messages: [
-        {
-          role: 'system',
-          content: SYSTEM_PROMPT,
-        },
-        {
-          role: 'user',
-          content: [
-            {
-              type: 'text',
-              text: userContent,
-            },
-            {
-              type: 'image_url',
-              image_url: {
-                url: imageBase64,
-              },
-            },
-          ],
-        },
-      ],
-      max_tokens: 2048,
-      temperature: 0.1,
-    }),
+    body: JSON.stringify({ model, messages, max_tokens: maxTokens, temperature: 0.01 }),
     signal,
   });
-
-  if (!response.ok) {
-    const errorText = await response.text().catch(() => response.statusText);
-    throw new Error(`OpenRouter API error: ${response.status} ${errorText}`);
+  if (!res.ok) {
+    const errText = await res.text().catch(() => res.statusText);
+    throw new Error(`API error ${res.status}: ${errText}`);
   }
-
-  const data = await response.json();
-
-  if (data.error) {
-    throw new Error(`OpenRouter API error: ${data.error.message || JSON.stringify(data.error)}`);
-  }
-
-  const content: string = data.choices?.[0]?.message?.content;
-
-  if (!content) {
-    throw new Error('No content in OpenRouter response');
-  }
-
-  const cleanedContent = content
-    .replace(/```json\n?/g, '')
-    .replace(/```\n?/g, '')
-    .trim();
-
-  try {
-    const courses = JSON.parse(cleanedContent);
-    if (!Array.isArray(courses)) {
-      throw new Error('Response is not an array');
-    }
-    return { courses, rawResponse: content };
-  } catch {
-    console.error('Failed to parse OpenRouter response:', content);
-    throw new Error('Failed to parse extracted courses');
-  }
+  const data = await res.json();
+  if (data.error) throw new Error(`API error: ${data.error.message || JSON.stringify(data.error)}`);
+  const content = data.choices?.[0]?.message?.content;
+  if (!content) throw new Error(`No content (finish_reason: ${data.choices?.[0]?.finish_reason || 'unknown'})`);
+  return content;
 }
 
-export async function extractCourses(
-  imageBase64: string,
-  prodi?: string,
-  requestId?: string
-): Promise<ExtractResult> {
+export async function extractCourses(imageBase64: string, prodi?: string, requestId?: string): Promise<ExtractResult> {
   const logger = createLogger(requestId);
-
-  // Try primary model first with 60s timeout (253B parameter model is slow)
-  const primaryController = new AbortController();
-  const primaryTimeoutId = setTimeout(() => primaryController.abort(), 60000);
-  const primaryStartTime = Date.now();
+  const startTime = Date.now();
 
   try {
-    const { courses, rawResponse } = await callOpenRouter(
-      imageBase64,
-      PRIMARY_MODEL,
-      prodi,
-      primaryController.signal,
-      logger
-    );
-    clearTimeout(primaryTimeoutId);
-    const executionTimeMs = Date.now() - primaryStartTime;
+    // Step 1: OCR (30s timeout)
+    const ctrl = new AbortController();
+    const timeout = setTimeout(() => ctrl.abort(), 30000);
+    const ocrStart = Date.now();
 
-    logger.logLlmResponse({
-      model: PRIMARY_MODEL,
-      rawResponse,
-      parsedCourses: courses,
-      executionTimeMs,
-      isFallback: false,
-    });
-
-    return {
-      success: true,
-      model_used: PRIMARY_MODEL,
-      courses,
-    };
-  } catch (primaryError) {
-    clearTimeout(primaryTimeoutId);
-    const primaryExecutionTimeMs = Date.now() - primaryStartTime;
-
-    const fallbackReason =
-      primaryError instanceof Error && primaryError.name === 'AbortError'
-        ? 'primary_timeout'
-        : 'primary_error';
-
-    logger.logLlmError({
-      model: PRIMARY_MODEL,
-      error: primaryError instanceof Error ? primaryError.message : String(primaryError),
-      executionTimeMs: primaryExecutionTimeMs,
-    });
-
-    console.warn(
-      `Primary model (${PRIMARY_MODEL}) failed [${fallbackReason}]:`,
-      primaryError instanceof Error ? primaryError.message : primaryError
-    );
-
-    // Try fallback model with 45s timeout
-    const fallbackController = new AbortController();
-    const fallbackTimeoutId = setTimeout(() => fallbackController.abort(), 45000);
-    const fallbackStartTime = Date.now();
-
+    let ocrText: string;
     try {
-      const { courses, rawResponse } = await callOpenRouter(
-        imageBase64,
-        FALLBACK_MODEL,
-        prodi,
-        fallbackController.signal,
-        logger
-      );
-      clearTimeout(fallbackTimeoutId);
-      const fallbackExecutionTimeMs = Date.now() - fallbackStartTime;
-
-      logger.logLlmResponse({
-        model: FALLBACK_MODEL,
-        rawResponse,
-        parsedCourses: courses,
-        executionTimeMs: fallbackExecutionTimeMs,
-        isFallback: true,
-        fallbackReason,
-      });
-
-      return {
-        success: true,
-        model_used: FALLBACK_MODEL,
-        courses,
-        fallback_reason: fallbackReason,
-      };
-    } catch (fallbackError) {
-      clearTimeout(fallbackTimeoutId);
-      const fallbackExecutionTimeMs = Date.now() - fallbackStartTime;
-
-      logger.logLlmError({
-        model: FALLBACK_MODEL,
-        error: fallbackError instanceof Error ? fallbackError.message : String(fallbackError),
-        executionTimeMs: fallbackExecutionTimeMs,
-      });
-
-      console.error('Fallback model also failed:', fallbackError);
-      throw new Error(
-        `Both primary and fallback models failed. ${
-          fallbackError instanceof Error ? fallbackError.message : ''
-        }`
-      );
+      logger.logLlmRequest({ model: OCR_MODEL, imageBase64Length: imageBase64.length, systemPromptLength: 0, userPrompt: 'OCR' });
+      ocrText = await chat(OCR_MODEL, [
+        { role: 'user', content: [{ type: 'text', text: 'OCR semua teks dari gambar ini. Output hanya teks mentah.' }, { type: 'image_url', image_url: { url: imageBase64 } }] },
+      ], ctrl.signal, 2048);
+      logger.logLlmResponse({ model: OCR_MODEL, rawResponse: ocrText, parsedCourses: [], executionTimeMs: Date.now() - ocrStart, isFallback: false });
+    } catch (e) {
+      clearTimeout(timeout);
+      throw new Error(`OCR failed: ${e instanceof Error ? e.message : e}`);
     }
+    clearTimeout(timeout);
+    const ocrElapsed = Date.now() - ocrStart;
+    console.log(`[ocr] done in ${ocrElapsed}ms, text: ${ocrText.length} chars`);
+
+    // Step 2: Parse directly with regex (no LLM needed!)
+    const courses = parseOcrDirect(ocrText);
+    const totalMs = Date.now() - startTime;
+    console.log(`[pipeline] OCR=${ocrElapsed}ms + parse=${totalMs - ocrElapsed}ms = ${totalMs}ms, courses=${courses.length}`);
+
+    if (courses.length === 0) {
+      throw new Error('No courses parsed from OCR text — check OCR output format');
+    }
+
+    return { success: true, model_used: OCR_MODEL, courses };
+  } catch (error) {
+    logger.logAppError(error, 'PIPELINE');
+    throw error;
   }
 }
