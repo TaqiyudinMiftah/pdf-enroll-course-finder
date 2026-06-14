@@ -8,14 +8,26 @@ interface ExtractedListProps {
   onCoursesChange: (courses: Course[]) => void;
   onSubmit: () => void;
   onReset: () => void;
+  prodi: string;
+  onProdiChange: (prodi: string) => void;
   fallbackReason?: string;
 }
+
+const PRODI_OPTIONS = [
+  'Informatika',
+  'Sistem Informasi',
+  'Teknologi Informasi',
+  'Teknik Komputer',
+  'Manajemen Informatika',
+];
 
 export default function ExtractedList({
   courses,
   onCoursesChange,
   onSubmit,
   onReset,
+  prodi,
+  onProdiChange,
   fallbackReason,
 }: ExtractedListProps) {
   const handleChange = (index: number, field: keyof Course, value: string) => {
@@ -30,8 +42,10 @@ export default function ExtractedList({
   };
 
   const handleAdd = () => {
-    onCoursesChange([...courses, { nama_mk: '', kelas: '', prodi: '' }]);
+    onCoursesChange([...courses, { nama_mk: '', kelas: '' }]);
   };
+
+  const hasEmptyCourse = courses.some((c) => !c.nama_mk.trim() || !c.kelas.trim());
 
   return (
     <>
@@ -60,7 +74,46 @@ export default function ExtractedList({
         </div>
       </div>
 
-      {/* Main Editable Table Section */}
+      {/* Program Studi Selector — Global, 1 kolom untuk semua mata kuliah */}
+      <div className="bg-white border border-slate-200 rounded-xl p-6 mb-8">
+        <label className="block font-label text-label text-on-surface-variant uppercase tracking-wider mb-3">
+          Program Studi
+        </label>
+        <p className="text-body-sm text-outline mb-4">
+          Pilih program studi yang berlaku untuk semua mata kuliah di bawah ini.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 items-start">
+          <select
+            value={prodi}
+            onChange={(e) => onProdiChange(e.target.value)}
+            className="w-full sm:w-80 px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md transition-all focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 appearance-none"
+          >
+            <option value="" disabled>
+              Pilih Program Studi
+            </option>
+            {PRODI_OPTIONS.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            value={prodi}
+            onChange={(e) => onProdiChange(e.target.value)}
+            placeholder="Atau ketik manual..."
+            className="w-full sm:w-80 px-4 py-3 bg-white border border-outline-variant rounded-lg font-body-md transition-all focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20"
+          />
+        </div>
+        {!prodi && (
+          <p className="mt-2 text-body-sm text-error flex items-center gap-1">
+            <span className="material-symbols-outlined text-[16px]">warning</span>
+            Program studi wajib diisi agar pencarian kode enroll lebih akurat.
+          </p>
+        )}
+      </div>
+
+      {/* Main Editable Table Section — tanpa kolom Program Studi */}
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
@@ -69,7 +122,6 @@ export default function ExtractedList({
                 <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-16">No</th>
                 <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Nama Mata Kuliah</th>
                 <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-32">Kelas</th>
-                <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest">Program Studi</th>
                 <th className="px-6 py-4 font-label text-slate-500 uppercase tracking-widest w-20 text-center">Aksi</th>
               </tr>
             </thead>
@@ -90,14 +142,6 @@ export default function ExtractedList({
                       type="text"
                       value={course.kelas}
                       onChange={(e) => handleChange(index, 'kelas', e.target.value)}
-                      className="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
-                    />
-                  </td>
-                  <td className="px-6 py-5">
-                    <input
-                      type="text"
-                      value={course.prodi || ''}
-                      onChange={(e) => handleChange(index, 'prodi', e.target.value)}
                       className="w-full bg-transparent border-none focus:ring-2 focus:ring-primary/20 rounded px-2 -mx-2 font-body-md text-on-surface hover:bg-slate-50"
                     />
                   </td>
@@ -142,7 +186,7 @@ export default function ExtractedList({
       <div className="mt-12 flex flex-col items-center gap-4 max-w-md mx-auto">
         <button
           onClick={onSubmit}
-          disabled={courses.length === 0}
+          disabled={courses.length === 0 || hasEmptyCourse || !prodi.trim()}
           className="w-full bg-primary-container text-on-primary py-4 rounded-xl font-h3 text-[18px] flex items-center justify-center gap-2 hover:bg-primary transition-all shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Cari Kode Enroll

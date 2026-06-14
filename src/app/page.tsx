@@ -303,6 +303,7 @@ export default function Home() {
   const [fallbackReason, setFallbackReason] = useState<string | undefined>();
   const [error, setError] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string>('');
+  const [globalProdi, setGlobalProdi] = useState<string>('');
 
   const handleUpload = async (file: File) => {
     if (file.size > 5 * 1024 * 1024) {
@@ -331,6 +332,11 @@ export default function Home() {
       if (data.success && data.courses.length > 0) {
         setCourses(data.courses);
         setFallbackReason(data.fallback_reason);
+        // Jika hasil extract punya prodi, gunakan sebagai globalProdi
+        const extractedProdi = data.courses.find((c) => c.prodi?.trim())?.prodi || '';
+        if (extractedProdi) {
+          setGlobalProdi(extractedProdi);
+        }
         setState('reviewing');
       } else {
         setError('Tidak ada mata kuliah terdeteksi. Silakan gunakan input manual.');
@@ -347,11 +353,17 @@ export default function Home() {
     setState('looking_up');
     setError(null);
 
+    // Inject global prodi ke setiap course jika course belum punya prodi
+    const enrichedCourses = coursesToLookup.map((c) => ({
+      ...c,
+      prodi: c.prodi?.trim() || globalProdi.trim(),
+    }));
+
     try {
       const response = await fetch('/api/lookup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ courses: coursesToLookup }),
+        body: JSON.stringify({ courses: enrichedCourses }),
       });
 
       if (!response.ok) {
@@ -375,6 +387,7 @@ export default function Home() {
     setFallbackReason(undefined);
     setError(null);
     setFileName('');
+    setGlobalProdi('');
   };
 
   const handleManualSubmit = (manualCourses: Course[]) => {
@@ -437,6 +450,8 @@ export default function Home() {
               onCoursesChange={setCourses}
               onSubmit={() => handleLookup(courses)}
               onReset={handleReset}
+              prodi={globalProdi}
+              onProdiChange={setGlobalProdi}
               fallbackReason={fallbackReason}
             />
           </div>

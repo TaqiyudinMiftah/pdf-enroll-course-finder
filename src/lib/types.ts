@@ -1,7 +1,7 @@
 ﻿export interface Course {
   nama_mk: string;
   kelas: string;
-  prodi: string;
+  prodi?: string;
   kode_mk?: string;
   confidence?: string;
 }
