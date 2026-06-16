@@ -1,0 +1,30 @@
+# ============================================================
+# PaddleOCR Service - Requirements
+# Arsitektur baru: FastAPI (client) → vLLM (server: PaddleOCR-VL-1.6)
+#
+# INSTALL ORDER:
+#   1. pip install -r requirements.txt
+#
+# vLLM server diinstall TERPISAH di venv sendiri:
+#   Lihat: start_vllm.bat
+# ============================================================
+
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+
+# OpenAI-compatible client (untuk memanggil vLLM server)
+openai>=1.30.0
+
+# Image processing
+Pillow==10.4.0
+numpy==1.26.4
+
+# HTML/Markdown parsing (untuk parse output tabel dari VLM)
+beautifulsoup4==4.12.3
+
+# File upload support
+python-multipart==0.0.9
+
+# Environment variables
+python-dotenv==1.0.1

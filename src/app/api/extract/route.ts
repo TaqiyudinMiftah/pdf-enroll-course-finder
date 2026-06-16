@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { extractCourses } from '@/lib/openrouter';
+import { extractCourses } from '@/lib/ocr-client';
 import { createLogger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {

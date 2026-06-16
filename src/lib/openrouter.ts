@@ -2,7 +2,7 @@ import { Course } from './types';
 import { createLogger } from './logger';
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '';
-const OCR_MODEL = process.env.OPENROUTER_OCR_MODEL || 'baidu/qianfan-ocr-fast:free';
+const OCR_MODEL = process.env.OPENROUTER_OCR_MODEL;
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 export interface ExtractResult {
